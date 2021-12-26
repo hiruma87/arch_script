@@ -43,7 +43,7 @@ echo '
 127.0.0.1   localhost
 ::1         localhost
 127.0.1.1   asura.localdomain   asura' >> /etc/hosts
-pacman -S intel-ucode grub grubbootmgr networkmanager wireless_tools wpa_supplicant os-prober mtools dosfstools base-devel linux-headers linux-zen-headers nvidia-dkms lvm2 --noconfirm
+pacman -S intel-ucode grub efibootmgr networkmanager wireless_tools wpa_supplicant os-prober mtools dosfstools base-devel linux-headers linux-zen-headers nvidia-dkms lvm2 --noconfirm
 pacman -S nvidia ntfs-3g gvfs --noconfirm
 sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
 mkinitcpio -p linux
