@@ -31,6 +31,7 @@ Include = /etc/pacman.d/arcolinux-mirrorlist
 SigLevel = Required DatabaseOptional
 Include = /etc/pacman.d/arcolinux-mirrorlist' | tee --append /etc/pacman.conf
 
+vim /etc/pacman.conf
 pacman -Syyu --noconfirm
 
 ln -sf /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
