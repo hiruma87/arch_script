@@ -47,7 +47,7 @@ echo "--------------------------------------------------------------------------
 echo -e "\nModifying Pacman Configuration...\n"
 
 # enable options "color", "ParallelDownloads", "multilib (32-bit) repository"
-sed -i 's/#Color/Color/ ; s/#ParallelDownloads/ParallelDownloads/ ; s/#[multilib]/[multilib]/' /etc/pacman.conf
+#sed -i 's/#Color/Color/ ; s/#ParallelDownloads/ParallelDownloads/ ; s/#[multilib]/[multilib]/' /etc/pacman.conf
 
 pacman -Syy
 
