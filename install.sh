@@ -83,6 +83,5 @@ echo -e "\nGenerating FSTab...\n"
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo -e "\nDone.\n\nBase installation is now complete.\n\n"
-cp preinstall.sh /mnt/root
-cp extra.sh /mnt/root
+
 arch-chroot /mnt
