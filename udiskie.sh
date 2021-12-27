@@ -1,5 +1,7 @@
 pacman -S udisks2 udiskie
 
+su
+
 echo '# UDISKS_FILESYSTEM_SHARED
 # ==1: mount filesystem to a shared directory (/media/VolumeName)
 # ==0: mount filesystem to a private directory (/run/media/$USER/VolumeName)
