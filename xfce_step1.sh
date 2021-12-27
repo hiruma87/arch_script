@@ -78,6 +78,7 @@ ttf-roboto
 ttf-ubuntu-font-family
 tamsyn-font
 python-pip
+yay
 )
 
 count=0
