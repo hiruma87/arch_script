@@ -79,6 +79,13 @@ ttf-ubuntu-font-family
 tamsyn-font
 python-pip
 yay
+wine-staging
+wine-mono
+wine-gecko
+firefox
+vivaldi
+vivaldi-ffmpeg-codecs
+keepassxc
 )
 
 count=0
