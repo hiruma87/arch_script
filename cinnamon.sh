@@ -47,6 +47,7 @@ echo "Installation of the core software"
 ###############################################################################
 
 list=(
+xorg
 sddm
 arcolinux-wallpapers-git
 cinnamon
