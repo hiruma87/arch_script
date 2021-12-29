@@ -122,12 +122,6 @@ sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
 
-tput setaf 2;echo "################################################################"
-echo "Removing packages we do not want"
-echo "################################################################"
-echo;tput sgr0
-sudo pacman -R xfce4-artwork xfce4-screensaver --noconfirm
-
 tput setaf 7;echo "################################################################"
 echo "You now have a very minimal functional desktop"
 echo "################################################################"
