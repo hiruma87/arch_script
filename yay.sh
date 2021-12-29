@@ -41,6 +41,8 @@ for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
 
+pacman -S steam
+
 echo
 echo "Done!"
 echo
