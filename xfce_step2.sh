@@ -24,6 +24,7 @@ PKGS=(
 
     'whatsapp-nativefier'
     'twitter-nativefier'
+    'rtl8761usb-dkms'
 
     # THEMES --------------------------------------------------------------
 
