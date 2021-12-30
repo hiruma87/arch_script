@@ -105,13 +105,6 @@ done
 
 ###############################################################################
 
-tput setaf 6;echo "################################################################"
-echo "Copying all files and folders from /etc/skel to ~"
-echo "################################################################"
-echo;tput sgr0
-cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S)
-cp -arf /etc/skel/. ~
-
 tput setaf 5;echo "################################################################"
 echo "Enabling sddm as display manager"
 echo "################################################################"
@@ -121,11 +114,6 @@ sudo systemctl enable org.cups.cupsd.service
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
-
-tput setaf 7;echo "################################################################"
-echo "You now have a very minimal functional desktop"
-echo "################################################################"
-echo;tput sgr0
 
 tput setaf 11;
 echo "################################################################"
