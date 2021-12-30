@@ -40,10 +40,11 @@ sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
 hostnamectl set-hostname asura
-echo '
-127.0.0.1   localhost
-::1         localhost
-127.0.1.1   asura.localdomain   asura' >> /etc/hosts
+echo '127.0.0.1       localhost
+::1             localhost
+127.0.1.1       asura.localdomain       asura
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters' >> /etc/hosts
 pacman -S intel-ucode grub efibootmgr networkmanager wireless_tools wpa_supplicant os-prober mtools dosfstools base-devel linux-headers linux-zen-headers lvm2 --noconfirm
 pacman -S nvidia-dkms ntfs-3g gvfs --noconfirm
 sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
