@@ -8,9 +8,6 @@ echo -e "\nDone.\n\n"
 echo "-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nFormatting Partitions...\n"
 
-# wipe file system of the installation destination disk
-wipefs --all /dev/sda
-
 # create a new EFI system partition of size 512 MiB with partition label as "BOOT"
 sgdisk -n 0:0:+512M -t 0:ef00 -c 0:BOOT /dev/sda
 
