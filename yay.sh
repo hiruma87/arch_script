@@ -24,7 +24,6 @@ PKGS=(
 
     'whatsapp-nativefier'
     'twitter-nativefier'
-    'rtl8761usb-dkms'
 
     # THEMES --------------------------------------------------------------
 
@@ -41,7 +40,7 @@ for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
 
-pacman -S steam
+sudo pacman -S steam
 
 echo
 echo "Done!"
