@@ -62,7 +62,7 @@ intel-ucode
 linux-headers
 linux-zen-headers
 grub
-efibootmanager
+efibootmgr
 os-prober
 mtools
 dosfstools
