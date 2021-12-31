@@ -91,6 +91,7 @@ wpa_supplicant
 dialog
 ntfs-3g
 gvfs
+reflector
 )
 
 count=0
@@ -100,6 +101,8 @@ for name in "${list[@]}" ; do
 	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
 	func_install $name
 done
+
+reflector
 
 sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
 
