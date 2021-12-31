@@ -56,7 +56,6 @@ cups
 cups-pdf
 gsfonts
 gutenprint
-sublime-text-4
 qbittorrent
 pulseaudio-bluetooth
 bluez
