@@ -58,6 +58,7 @@ gnome-screenshot
 iso-flag-png
 mintlocale
 nemo-fileroller
+nvidia-dkms
 cups
 cups-pdf
 gsfonts
