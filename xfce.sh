@@ -59,6 +59,7 @@ bluez
 bluez-libs
 bluez-utils
 blueberry
+nvidia-dkms
 arcolinux-fonts-git
 awesome-terminal-fonts
 adobe-source-sans-fonts
