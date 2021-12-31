@@ -48,15 +48,12 @@ echo "Installation of the core software"
 
 list=(
 sddm
-arcolinux-wallpapers-git
 xfce4
 xfce4-goodies
-arcolinux-logout-git
 cups
-cups-pdf
-gsfonts
 gutenprint
 qbittorrent
+pulseaudio
 pulseaudio-bluetooth
 bluez
 bluez-libs
