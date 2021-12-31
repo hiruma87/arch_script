@@ -61,6 +61,7 @@ base-devel
 intel-ucode
 linux-headers
 linux-zen-headers
+grub
 efibootmanager
 os-prober
 mtools
@@ -97,7 +98,7 @@ useradd -m -g users -G audio,video,network,games,wheel,storage,rfkill -s /bin/ba
 
 passwd asura
 
-EDITOR=vim visudo
+sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 
 grub-install --target=x86_64-efi --bootloader-id=ArchLinux --recheck
 
