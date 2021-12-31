@@ -46,7 +46,7 @@ echo '127.0.0.1       localhost
 ff02::1         ip6-allnodes
 ff02::2         ip6-allrouters' >> /etc/hosts
 pacman -S intel-ucode grub efibootmgr networkmanager wireless_tools wpa_supplicant os-prober mtools dosfstools base-devel linux-headers linux-zen-headers lvm2 --noconfirm
-pacman -S nvidia-dkms ntfs-3g gvfs --noconfirm
+pacman -S ntfs-3g gvfs --noconfirm
 sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 mkinitcpio -p linux-zen
