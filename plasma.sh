@@ -94,7 +94,6 @@ done
 ###############################################################################
 
 tput setaf 11;
-pacman -S xorg plasma packagekit-qt5 nemo xed wine-staging wine-gecko wine-mono --noconfirm
 echo "################################################################"
 echo "Software has been installed"
 echo "################################################################"
