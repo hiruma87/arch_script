@@ -13,3 +13,5 @@ w    /proc/acpi/wakeup     -    -    -    -   USBE' >> /etc/tmpfiles.d/disable-u
 
 echo '### Automatically switch to newly-connected devices
 load-module module-switch-on-connect' >> /etc/pulse/default.pa
+
+echo 'blacklist pcspkr' >> /etc/modprobe.d/nobeep.conf
