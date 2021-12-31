@@ -55,6 +55,19 @@ func_category() {
 func_category Fonts
 
 list=(
+xorg
+plasma-meta
+packagekit-qt5
+nemo
+xed
+wine-staging
+wine-gecko
+wine-mono
+yay
+firefox
+vivaldi
+vivaldi-ffmpeg-codecs
+keepassxc
 arcolinux-fonts-git
 awesome-terminal-fonts
 adobe-source-sans-fonts
