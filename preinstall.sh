@@ -53,30 +53,10 @@ echo '127.0.0.1       localhost
 ff02::1         ip6-allnodes
 ff02::2         ip6-allrouters' >> /etc/hosts
 
-func_install() {
-	if pacman -Qi $1 &> /dev/null; then
-		tput setaf 2
-  		echo "###############################################################################"
-  		echo "################## The package "$1" is already installed"
-      	echo "###############################################################################"
-      	echo
-		tput sgr0
-	else
-    	tput setaf 3
-    	echo "###############################################################################"
-    	echo "##################  Installing package "  $1
-    	echo "###############################################################################"
-    	echo
-    	tput sgr0
-    	sudo pacman -S --noconfirm --needed $1
-    fi
-}
+echo
+echo "Installing Packages"
 
-###############################################################################
-echo "Installation of the core software"
-###############################################################################
-
-list=(
+PKGS=(
 base-devel
 intel-ucode
 linux-headers
@@ -94,13 +74,14 @@ gvfs
 reflector
 )
 
-count=0
-
-for name in "${list[@]}" ; do
-	count=$[count+1]
-	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
-	func_install $name
+for PKG in "${PKGS[@]}" ; do
+	echo "Installing: ${PKG}"
+	sudo pacman -S "$PKG" --noconfirm --needed
 done
+
+echo
+echo "Done"
+echo
 
 reflector
 
