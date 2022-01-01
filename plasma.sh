@@ -56,15 +56,18 @@ func_category Fonts
 
 list=(
 xorg
-plasma-meta
+nvidia-dkms
+plasma
 packagekit-qt5
 nemo
 xed
+bluedevil
+pulseaudio
+pulseaudio-bluetooth
 wine-staging
 wine-gecko
 wine-mono
 yay
-firefox
 vivaldi
 vivaldi-ffmpeg-codecs
 keepassxc
