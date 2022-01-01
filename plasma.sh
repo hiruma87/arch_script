@@ -64,6 +64,9 @@ xed
 bluedevil
 pulseaudio
 pulseaudio-bluetooth
+electron
+cups
+gutenprint
 wine-staging
 wine-gecko
 wine-mono
