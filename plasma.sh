@@ -74,7 +74,6 @@ yay
 vivaldi
 vivaldi-ffmpeg-codecs
 keepassxc
-xfce4-panel
 arcolinux-fonts-git
 awesome-terminal-fonts
 adobe-source-sans-fonts
