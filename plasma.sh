@@ -78,6 +78,7 @@ wine-mono
 xfce4-panel
 kvantum
 yay
+firefox
 vivaldi
 vivaldi-ffmpeg-codecs
 keepassxc
