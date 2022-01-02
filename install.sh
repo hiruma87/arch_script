@@ -18,7 +18,7 @@ sgdisk -n 0:0:0 -t 0:8e00 -c 0:ROOT /dev/sda
 mkfs.fat -F 32 /dev/sda1
 
 # Create logical volume
-pvcreate --dataalignment 1m /dev/sda2
+pvcreate -ff --dataalignment 1m /dev/sda2
 
 # Create LVM group
 vgcreate volg0 /dev/sda2
