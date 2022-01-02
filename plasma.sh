@@ -21,6 +21,7 @@
 #   DECLARATION OF FUNCTIONS
 #
 ###############################################################################
+sudo pacman -Syyu --noconfirm
 
 
 func_install() {
