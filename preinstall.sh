@@ -74,6 +74,7 @@ ntfs-3g
 gvfs
 lvm2
 reflector
+sudo
 )
 
 for PKG in "${PKGS[@]}" ; do
