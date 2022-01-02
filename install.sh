@@ -83,7 +83,9 @@ git
 )
 
 for PKG in "${PKGS[@]}" ; do
+        echo "################################################"
 	echo "Installing: ${PKG}"
+        echo "################################################"
 	pacstrap /mnt "$PKG"
 done
 
