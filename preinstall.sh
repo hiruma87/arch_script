@@ -72,9 +72,7 @@ wpa_supplicant
 dialog
 ntfs-3g
 gvfs
-lvm2
 reflector
-sudo
 )
 
 for PKG in "${PKGS[@]}" ; do
