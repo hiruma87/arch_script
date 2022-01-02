@@ -111,6 +111,4 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 
-umount -a
-
 exit
