@@ -71,23 +71,7 @@ echo -e "\nPerforming Pacstrap Operation...\n"
 
 # edit and adjust the "pkgs" file for desired packages (don't worry about any extra white spaces or new lines or comments as they will be omitted using sed and tr)
 
-PKGS=(
-base
-linux
-linux-zen
-linux-firmware
-vim
-nano
-bash-completion
-git
-)
-
-for PKG in "${PKGS[@]}" ; do
-        echo "################################################"
-	echo "Installing: ${PKG}"
-        echo "################################################"
-	pacstrap /mnt "$PKG"
-done
+pacstrap /mnt base linux linux-zen linux-firmware vim nano bash-completion lvm2
 
 echo -e "\nDone.\n\n"
 
