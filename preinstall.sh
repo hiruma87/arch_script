@@ -77,7 +77,9 @@ reflector
 )
 
 for PKG in "${PKGS[@]}" ; do
+        echo "########################################################"
 	echo "Installing: ${PKG}"
+        echo "########################################################"
 	pacman -S "$PKG" --noconfirm --needed
 done
 
