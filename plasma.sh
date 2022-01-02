@@ -56,6 +56,7 @@ func_category Fonts
 
 list=(
 xorg
+sddm
 nvidia-dkms
 plasma
 packagekit-qt5
