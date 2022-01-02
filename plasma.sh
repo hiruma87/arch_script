@@ -71,6 +71,7 @@ gutenprint
 wine-staging
 wine-gecko
 wine-mono
+xfce4-panel
 yay
 vivaldi
 vivaldi-ffmpeg-codecs
