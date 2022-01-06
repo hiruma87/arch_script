@@ -59,7 +59,7 @@ list=(
 xorg
 sddm
 nvidia-dkms
-plasma
+plasma-meta
 packagekit-qt5
 bluedevil
 pulseaudio
