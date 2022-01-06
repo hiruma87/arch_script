@@ -83,6 +83,7 @@ firefox
 vivaldi
 vivaldi-ffmpeg-codecs
 keepassxc
+smplayer
 arcolinux-fonts-git
 awesome-terminal-fonts
 adobe-source-sans-fonts
