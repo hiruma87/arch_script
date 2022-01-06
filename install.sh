@@ -18,7 +18,7 @@ sgdisk -n 0:0:0 -t 0:8e00 -c 0:ROOT /dev/sda
 mkfs.fat -F 32 /dev/sda1
 
 # Create logical volume
-pvcreate -ff --dataalignment 1m /dev/sda2
+pvcreate --dataalignment 1m /dev/sda2
 
 # Create LVM group
 vgcreate volg0 /dev/sda2
@@ -70,16 +70,42 @@ echo "--------------------------------------------------------------------------
 echo -e "\nPerforming Pacstrap Operation...\n"
 
 # edit and adjust the "pkgs" file for desired packages (don't worry about any extra white spaces or new lines or comments as they will be omitted using sed and tr)
+echo
+echo "########################################################"
+echo "Installing Packages"
+echo "########################################################"
+echo
 
-pacstrap /mnt base linux linux-zen linux-firmware vim nano bash-completion lvm2 git
+PKGS=(
+base
+linux
+linux-zen
+lvm2
+linux-firmware
+vim
+bash-completion
+)
+
+count=0
+for PKG in "${PKGS[@]}" ; do
+  count=$[count+1]
+  echo "########################################################"
+	echo "Installing: $count ${PKG}"
+  echo "########################################################"
+	pacstrap /mnt "$PKG"
+done
+
+echo
+echo "Done"
+echo
 
 echo -e "\nDone.\n\n"
 
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nGenerating FSTab...\n"
-
+echo
 genfstab -U /mnt >> /mnt/etc/fstab
-
+echo
 echo -e "\nDone.\n\nBase installation is now complete.\n\n"
 
 arch-chroot /mnt
