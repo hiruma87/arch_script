@@ -113,7 +113,7 @@ echo "################################################################"
 echo "Enabling sddm as display manager"
 echo "################################################################"
 echo;tput sgr0
-sudo systemctl enable sddm.service -f
+sudo systemctl enable sddm.service
 sudo systemctl enable cups.service
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
