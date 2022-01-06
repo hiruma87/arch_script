@@ -19,7 +19,8 @@ PKGS=(
     # UTILITIES -----------------------------------------------------------
 
     'timeshift'                 # Backup and Restore
-
+    'rtl8812au-dkms-git'
+    
     # COMMUNICATIONS ------------------------------------------------------
 
     'whatsapp-nativefier'
