@@ -34,7 +34,6 @@ PKGS=(
     'yuzu-mainline-bin'
     'lutris-git'
     'protonup-qt'
-    'waterfox-classic-kpe'
 )
 
 
