@@ -73,6 +73,7 @@ dialog
 ntfs-3g
 gvfs
 reflector
+git
 )
 
 for PKG in "${PKGS[@]}" ; do
