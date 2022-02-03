@@ -89,7 +89,9 @@ count=0
 
 for name in "${list[@]}" ; do
 	count=$[count+1]
+	echo "################################################################"
 	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
+	echo "################################################################"
 	func_install $name
 done
 
