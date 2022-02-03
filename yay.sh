@@ -11,8 +11,12 @@ echo
 echo "INSTALLING AUR SOFTWARE"
 echo
 
-cd "${HOME}"
 
+cd "${HOME}"
+mkdir git
+
+echo "CLONING: YAY"
+git clone "https://aur.archlinux.org/yay.git"
 
 PKGS=(
 
@@ -36,6 +40,8 @@ PKGS=(
     'protonup-qt'
 )
 
+cd ${HOME}/git/yay
+makepkg -si
 
 for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
