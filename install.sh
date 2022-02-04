@@ -52,24 +52,7 @@ echo "Installing Packages"
 echo "########################################################"
 echo
 
-PKGS=(
-base
-linux
-linux-zen
-lvm2
-linux-firmware
-vim
-bash-completion
-)
-
-count=0
-for PKG in "${PKGS[@]}" ; do
-  count=$[count+1]
-  echo "########################################################"
-	echo "Installing: $count ${PKG}"
-  echo "########################################################"
-	pacstrap /mnt "$PKG"
-done
+pacstrap /mnt base linux linux-zen lvm2 linux-firmware vim bash-completion
 
 echo
 echo "Done"
