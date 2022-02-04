@@ -46,9 +46,9 @@ git
 )
 count=0
 for PKG in "${PKGS[@]}" ; do
-	count=$count+1
+	count=$[count+1]
         echo "########################################################"
-	echo "Installing: $count ${PKG}"
+	echo echo "Installing package nr.  "$count" "${PKG}
         echo "########################################################"
 	pacman -S "$PKG" --noconfirm --needed
 done
