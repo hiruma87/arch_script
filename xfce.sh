@@ -60,6 +60,19 @@ bluez-libs
 bluez-utils
 blueberry
 nvidia
+xarchive
+unzip
+smplayer
+keepassxc
+firefox
+vivaldi
+vivaldi-ffmpeg-codecs
+python-pip
+wine-staging
+wine-gecko
+wine-mono
+xfwm4-themes
+galculator
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
@@ -73,14 +86,6 @@ ttf-liberation
 ttf-roboto
 ttf-ubuntu-font-family
 tamsyn-font
-python-pip
-wine-staging
-wine-mono
-wine-gecko
-firefox
-vivaldi
-vivaldi-ffmpeg-codecs
-keepassxc
 )
 
 count=0
@@ -90,6 +95,7 @@ for name in "${list[@]}" ; do
 	echo "################################################################"
 	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
 	echo "################################################################"
+	sleep 5
 	func_install $name
 done
 
@@ -105,17 +111,6 @@ sudo systemctl enable cups.service
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
-
-tput setaf 2;echo "################################################################"
-echo "Removing packages we do not want"
-echo "################################################################"
-echo;tput sgr0
-sudo pacman -R xfce4-artwork xfce4-screensaver --noconfirm
-
-tput setaf 7;echo "################################################################"
-echo "You now have a very minimal functional desktop"
-echo "################################################################"
-echo;tput sgr0
 
 tput setaf 11;
 echo "################################################################"
