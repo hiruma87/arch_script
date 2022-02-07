@@ -60,7 +60,8 @@ bluez-libs
 bluez-utils
 blueberry
 nvidia
-xarchive
+xarchiver
+network-manager-applet
 unzip
 smplayer
 keepassxc
