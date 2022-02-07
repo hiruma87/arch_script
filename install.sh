@@ -4,18 +4,8 @@ echo -e "\nStarting NTP Daemon...\n"
 timedatectl set-ntp true
 
 echo -e "\nDone.\n\n"
-
-echo "-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-echo -e "\nFormatting Partitions...\n"
-
-# wipe file system of the installation destination disk
-wipefs --all /dev/sda
-
-# create a new EFI system partition of size 512 MiB with partition label as "BOOT"
-sgdisk -n 0:0:+512M -t 0:ef00 -c 0:BOOT /dev/sda
-
-# create a new Linux LVM partition on the remaining space with partition label as "ROOT"
-sgdisk -n 0:0:0 -t 0:8304 -c 0:ROOT /dev/sda
+sleep 10
+echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 # format partition 1 as FAT32 with file system label "ESP"
 mkfs.fat -F 32 /dev/sda1
@@ -27,6 +17,7 @@ echo -e "\nDone.\n\n"
 
 
 echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+sleep 10
 echo -e "\nMounting Partitions...\n"
 
 # mount the ROOT partition on "/mnt"
@@ -43,6 +34,7 @@ lsblk
 echo -e "\nDone.\n\n"
 
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+sleep 10
 echo -e "\nPerforming Pacstrap Operation...\n"
 
 # edit and adjust the "pkgs" file for desired packages (don't worry about any extra white spaces or new lines or comments as they will be omitted using sed and tr)
@@ -52,19 +44,19 @@ echo "Installing Packages"
 echo "########################################################"
 echo
 
-pacstrap /mnt base linux linux-zen lvm2 linux-firmware vim bash-completion
+pacstrap /mnt base linux linux-firmware linux-firmware-qcom vim bash-completion
 
 echo
 echo "Done"
 echo
 
 echo -e "\nDone.\n\n"
-
+sleep 10
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nGenerating FSTab...\n"
 echo
 genfstab -U /mnt >> /mnt/etc/fstab
 echo
 echo -e "\nDone.\n\nBase installation is now complete.\n\n"
-
+sleep 10
 arch-chroot /mnt
