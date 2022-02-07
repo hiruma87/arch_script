@@ -54,7 +54,7 @@ sleep 10
 passwd asura
 sleep 10
 
-sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 sleep 10
 
 grub-install --target=x86_64-efi --bootloader-id=ArchLinux --recheck
