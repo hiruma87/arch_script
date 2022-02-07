@@ -59,8 +59,7 @@ bluez
 bluez-libs
 bluez-utils
 blueberry
-nvidia-dkms
-arcolinux-fonts-git
+nvidia
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
@@ -75,7 +74,6 @@ ttf-roboto
 ttf-ubuntu-font-family
 tamsyn-font
 python-pip
-yay
 wine-staging
 wine-mono
 wine-gecko
