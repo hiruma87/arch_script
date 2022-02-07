@@ -58,7 +58,7 @@ func_category Fonts
 list=(
 xorg
 sddm
-nvidia-dkms
+nvidia
 plasma-meta
 packagekit-qt5
 bluedevil
@@ -78,13 +78,12 @@ wine-gecko
 wine-mono
 xfce4-panel
 kvantum
-yay
 firefox
 vivaldi
 vivaldi-ffmpeg-codecs
 keepassxc
 smplayer
-arcolinux-fonts-git
+python-pip
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
