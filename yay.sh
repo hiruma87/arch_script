@@ -14,9 +14,12 @@ echo
 
 cd "${HOME}"
 mkdir git
-
+cd git
 echo "CLONING: YAY"
 git clone "https://aur.archlinux.org/yay.git"
+cd yay
+makepkg -si
+sleep 10
 
 PKGS=(
 
@@ -38,10 +41,20 @@ PKGS=(
     'yuzu-mainline-bin'
     'lutris-git'
     'protonup-qt'
+    
+    # FONTS----------------------------------------------------------------
+    # Japanese
+    'adobe-source-han-sans-jp-fonts'
+    'adobe-source-han-serif-jp-fonts'
+    'otf-ipafont'
+    'ttf-hanazono'
+    'ttf-sazanami'
+    'ttf-koruri'
+    'ttf-monapo'
+    'ttf-mplus'
+    'ttf-vlgothic'
 )
 
-cd ${HOME}/git/yay
-makepkg -si
 
 for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
