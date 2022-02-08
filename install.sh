@@ -67,13 +67,14 @@ echo
 echo "Done"
 echo
 
-echo -e "\nDone.\n\n"
 sleep 3
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nGenerating FSTab...\n"
 echo
 genfstab -U /mnt >> /mnt/etc/fstab
-echo
+sleep 3
+cat /mnt/etc/fstab
+sleep 3
 echo -e "\nDone.\n\nBase installation is now complete.\n\n"
 sleep 3
 arch-chroot /mnt
