@@ -19,7 +19,7 @@ echo "CLONING: YAY"
 git clone "https://aur.archlinux.org/yay.git"
 cd yay
 makepkg -si
-sleep 10
+sleep 3
 
 PKGS=(
 
@@ -40,7 +40,7 @@ PKGS=(
 
     'yuzu-mainline-bin'
     'lutris-git'
-    'protonup-qt'
+    'pamac-all'
     
     # FONTS----------------------------------------------------------------
     # Japanese
@@ -55,13 +55,18 @@ PKGS=(
     'ttf-vlgothic'
 )
 
-
+coubt = 0
 for PKG in "${PKGS[@]}"; do
+	count=$[count+1]
+	echo "################################################################"
+	echo "Installing package nr.  "$count " " $PKGS
+	echo "################################################################"
     yay -S --noconfirm $PKG
+    sleep 3
 done
 
 sudo pacman -S steam
-
+    sleep 3
 echo
 echo "Done!"
 echo
