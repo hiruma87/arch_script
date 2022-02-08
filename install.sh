@@ -53,6 +53,7 @@ linux-firmware
 vim
 bash-completion
 )
+count = 0
 for pkg in "${i[@]}" ; do
 	count=$[count+1]
 	echo "################################################################"
