@@ -15,28 +15,29 @@ mkfs.ext4 /dev/sda2
 
 echo -e "\nDone.\n\n"
 
+sleep 3
 
 echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-sleep 10
-echo -e "\nMounting Partitions...\n"
 
+echo -e "\nMounting Partitions...\n"
+sleep 3
 # mount the ROOT partition on "/mnt"
 mount /dev/sda2 /mnt
-
+sleep 3
 # create necessary directories
 mkdir -p /mnt/boot/EFI
-
+sleep 3
 # mount the EFI partition on "/mnt/boot"
 mount /dev/sda1 /mnt/boot/EFI
-
+sleep 3
 lsblk
-
+sleep 3
 echo -e "\nDone.\n\n"
 
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-sleep 10
-echo -e "\nPerforming Pacstrap Operation...\n"
 
+echo -e "\nPerforming Pacstrap Operation...\n"
+sleep 3
 # edit and adjust the "pkgs" file for desired packages (don't worry about any extra white spaces or new lines or comments as they will be omitted using sed and tr)
 echo
 echo "########################################################"
@@ -44,19 +45,33 @@ echo "Installing Packages"
 echo "########################################################"
 echo
 
-pacstrap /mnt base linux linux-firmware linux-firmware-qcom vim bash-completion
+i=(
+base
+linux
+linux-firmware
+vim
+bash-completion
+)
+for pkg in "${i[@]}" ; do
+	count=$[count+1]
+	echo "################################################################"
+	echo "Installing package nr.  "$count " " $i
+	echo "################################################################"
+	pacstrap /mnt $pkg
+  sleep 3
+done
 
 echo
 echo "Done"
 echo
 
 echo -e "\nDone.\n\n"
-sleep 10
+sleep 3
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nGenerating FSTab...\n"
 echo
 genfstab -U /mnt >> /mnt/etc/fstab
 echo
 echo -e "\nDone.\n\nBase installation is now complete.\n\n"
-sleep 10
+sleep 3
 arch-chroot /mnt
