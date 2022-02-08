@@ -84,6 +84,8 @@ vivaldi-ffmpeg-codecs
 keepassxc
 smplayer
 python-pip
+xarchiver
+unzip
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
