@@ -74,6 +74,8 @@ wine-gecko
 wine-mono
 xfwm4-themes
 galculator
+openvpn
+easy-rsa
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
