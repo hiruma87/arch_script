@@ -26,7 +26,7 @@ PKGS=(
     # UTILITIES -----------------------------------------------------------
 
     'timeshift'                 # Backup and Restore
-    'rtl8812au-dkms-git'
+    #'rtl8812au-dkms-git'
     
     # COMMUNICATIONS ------------------------------------------------------
 
@@ -59,7 +59,7 @@ coubt = 0
 for PKG in "${PKGS[@]}"; do
 	count=$[count+1]
 	echo "################################################################"
-	echo "Installing package nr.  "$count " " $PKGS
+	echo "Installing package nr.  "$count " " $PKG
 	echo "################################################################"
     yay -S --noconfirm $PKG
     sleep 3
