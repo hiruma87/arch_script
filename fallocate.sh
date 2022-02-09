@@ -10,7 +10,7 @@ echo '#################################################################'
 echo 'Creating a swapfile'
 echo '#################################################################'
 sleep 2
-fallocate -l 4GB /swapfile
+fallocate -l 4096MB /swapfile
 sleep 2
 echo
 echo 'Done'
