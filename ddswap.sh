@@ -10,7 +10,7 @@ echo '#######################################################'
 echo 'Create a swapfile'
 echo '#######################################################'
 sleep 2
-dd if=/dev/zero of=/swapfile bs=1M count=2048 status=progress
+dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
 sleep 2
 chmod 600 /swapfile
 sleep 2
