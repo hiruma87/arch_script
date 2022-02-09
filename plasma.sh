@@ -128,4 +128,4 @@ echo;tput sgr0
 
 pacman -Syyu
 
-reboot
+
