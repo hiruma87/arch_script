@@ -1,3 +1,11 @@
+echo '#######################################################'
+echo 'Enter superuser'
+echo '#######################################################'
+sleep 2
+su
+sleep 2
+cd /root
+sleep 2
 echo '#################################################################'
 echo 'Creating a swapfile'
 echo '#################################################################'
@@ -16,10 +24,17 @@ sleep 2
 mkswap /swapfile
 sleep 2
 echo '#################################################################'
-echo 'Create swap boot entry'
+echo 'Create swap fstab entry'
 echo '#################################################################'
+sleep 2
+cp /etc/fstab /etc/fstab.bak
 sleep 2
 echo '/swapfile none swap defaults 0 0' >> /etc/fstab
 sleep 2
-grub-mkconfig -o /boot/grub/grub.cfg
+cat /etc/fstab
 sleep 2
+swapon -a
+sleep 2
+free -m
+sleep 2
+exit
