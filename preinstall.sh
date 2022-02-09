@@ -96,7 +96,7 @@ count = 0
 for pkg in "${i[@]}" ; do
 	count=$[count+1]
 	echo "################################################################"
-	echo "Installing package nr.  "$count " " $i
+	echo "Installing package nr.  "$count " " $pkg
 	echo "################################################################"
 	pacman -S --noconfirm $pkg
   sleep 3
