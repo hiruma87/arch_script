@@ -18,7 +18,7 @@ cd git
 echo "CLONING: YAY"
 git clone "https://aur.archlinux.org/yay.git"
 cd yay
-makepkg -si
+makepkg -si --noconfirm
 sleep 3
 
 PKGS=(
@@ -40,7 +40,7 @@ PKGS=(
 
     'yuzu-mainline-bin'
     'lutris-git'
-    'pamac-all'
+    #'pamac-all'
     
     # FONTS----------------------------------------------------------------
     # Japanese
