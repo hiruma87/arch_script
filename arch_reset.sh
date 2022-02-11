@@ -1,7 +1,7 @@
 echo 'Disable greeting manager'
 sudo systemctl disable sddm.service
 
-sudo pacman -D asdeps $(pacman -Qqe)
+sudo pacman -D --asdeps $(pacman -Qqe)
 sudo pacman -D --asexplicit base linux linux-firmware git vim intel-ucode
 
 #Need to change to su
