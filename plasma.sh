@@ -67,6 +67,7 @@ xarchiver
 unzip
 openvpn
 easy-rsa
+ark
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
