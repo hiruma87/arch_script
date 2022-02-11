@@ -41,6 +41,8 @@ PKGS=(
     'yuzu-mainline-bin'
     'lutris-git'
     #'pamac-all'
+    'twitch-bin'
+    'facebook-nativefier'
     
     # FONTS----------------------------------------------------------------
     # Japanese
