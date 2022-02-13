@@ -4,7 +4,7 @@ echo 'Change pacman.conf'
 echo '##################################################################'
 sleep 2
 
-echo'[multilib]
+echo '[multilib]
 Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 sleep 2
 
