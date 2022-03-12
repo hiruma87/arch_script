@@ -1,11 +1,32 @@
 #!/bin/bash
+echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+echo -e "\nEnter username to be created:\n"
+
+read user
+
+echo -e "\nEnter new password for $user:\n"
+
+read uspw
+
+echo -e "\nEnter new password for root:\n"
+
+read rtpw
+
+echo -e "\nEnter new hostname (device name):\n"
+
+read host
+echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+echo -e "\nUpdating Pacman Configuration (this time for installation destination system)...\n"
+
+
+
 echo '##################################################################'
 echo 'Change pacman.conf'
 echo '##################################################################'
 sleep 2
-
-echo '[multilib]
-Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
+sed -i 's #Color Color ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf
+#echo '[multilib]
+#Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 sleep 2
 
 #vim /etc/pacman.conf
@@ -42,7 +63,7 @@ echo 'Setting Locale'
 echo '##################################################################'
 sleep 2
 
-sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's #en_US.UTF-8 en_US.UTF-8 ' /etc/locale.gen
 sleep 2
 echo "Done"
 sleep 2
@@ -62,9 +83,10 @@ echo 'Set Hosts'
 echo '##################################################################'
 sleep 2
 
-hostnamectl set-hostname asura
+hostnamectl set-hostname $host
 sleep 2
-
+hostnamectl
+sleep 3
 echo '127.0.0.1       localhost
 ::1             localhost
 127.0.1.1       asura.localdomain       asura
@@ -123,7 +145,7 @@ echo '##################################################################'
 echo 'Set root password'
 echo '##################################################################'
 sleep 2
-passwd
+echo -e "$rtpw\n$rtpw" | passwd root
 sleep 2
 
 echo '##################################################################'
@@ -131,7 +153,7 @@ echo 'Create user'
 echo '##################################################################'
 sleep 2
 
-useradd -m -g users -G audio,video,network,games,wheel,storage,rfkill -s /bin/bash asura
+useradd -m -g users -G audio,video,network,games,wheel,storage,rfkill -s /bin/bash $user
 sleep 2
 
 echo '##################################################################'
@@ -139,7 +161,7 @@ echo 'Set user password'
 echo '##################################################################'
 sleep 2
 
-passwd asura
+echo -e "$uspw\n$uspw" | passwd $user
 sleep 2
 
 echo '##################################################################'
@@ -148,6 +170,7 @@ echo '##################################################################'
 sleep 2
 
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
+
 sleep 2
 
 echo '##################################################################'
