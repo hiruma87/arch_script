@@ -1,24 +1,40 @@
+echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+echo -e "\nFormatting Partitions...\n"
+sleep 3
+
+# wipe file system of the installation destination disk
+wipefs --all /dev/sda
+sleep 3
+
+# create a new EFI system partition of size 512 MiB with partition label as "BOOT"
+sgdisk -n 0:0:+512M -t 0:ef00 -c 0:BOOT /dev/sda
+sleep 3
+
+# create a new Linux x86-64 root (/) partition on the remaining space with partition label as "ROOT"
+sgdisk -n 0:0:0 -t 0:8304 -c 0:ROOT /dev/sda
+sleep 3
+
+# format partition 1 as FAT32 with file system label "ESP"
+mkfs.fat -F 32 /dev/sda1
+sleep 3
+
+# format partition 2
+mkfs.ext4 /dev/sda2
+sleep 3
+
+echo -e "\nDone.\n\n"
+sleep 3
+
+
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nStarting NTP Daemon...\n"
 
 timedatectl set-ntp true
-sleep 10
+sleep 3
 
 echo -e "\nDone.\n\n"
 
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-
-# format partition 1 as FAT32 with file system label "ESP"
-mkfs.fat -F 32 /dev/sda1
-
-# format partition 2
-mkfs.ext4 /dev/sda2
-
-echo -e "\nDone.\n\n"
-
-sleep 3
-
-echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 echo -e "\nMounting Partitions...\n"
 sleep 3
@@ -36,6 +52,15 @@ sleep 3
 echo -e "\nDone.\n\n"
 
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+echo -e "\nModifying Pacman Configuration...\n"
+sleep 3
+# enable options "color", "ParallelDownloads", "multilib (32-bit) repository"
+sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf
+sleep 3
+echo -e "\nDone.\n\n"
+sleep 3
+
+echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 echo -e "\nPerforming Pacstrap Operation...\n"
 sleep 3
