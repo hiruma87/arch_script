@@ -13,13 +13,32 @@ echo
 
 
 cd "${HOME}"
-mkdir git
 cd git
 echo "CLONING: YAY"
 git clone "https://aur.archlinux.org/yay.git"
 cd yay
 makepkg -si --noconfirm
 sleep 3
+
+
+func_install() {
+	if pacman -Qi $1 &> /dev/null; then
+		tput setaf 2
+  		echo "###############################################################################"
+  		echo "################## The package "$1" is already installed"
+      	echo "###############################################################################"
+      	echo
+		tput sgr0
+	else
+    	tput setaf 3
+    	echo "###############################################################################"
+    	echo "##################  Installing package "  $1
+    	echo "###############################################################################"
+    	echo
+    	tput sgr0
+    	yay -S --noconfirm --needed $1
+    fi
+}
 
 PKGS=(
 
@@ -30,7 +49,7 @@ PKGS=(
     
     # COMMUNICATIONS ------------------------------------------------------
 
-    'whatsapp-nativefier'
+    #'whatsapp-nativefier'
     'twitter-nativefier'
 
     # THEMES --------------------------------------------------------------
@@ -38,11 +57,11 @@ PKGS=(
 
     # APPS ----------------------------------------------------------------
 
-    'yuzu-mainline-bin'
+    #'yuzu-mainline-bin'
     'lutris-git'
     #'pamac-all'
-    'twitch-bin'
-    'facebook-nativefier'
+    #'twitch-bin'
+    #'facebook-nativefier'
     
     # FONTS----------------------------------------------------------------
     # Japanese
@@ -61,9 +80,8 @@ coubt = 0
 for PKG in "${PKGS[@]}"; do
 	count=$[count+1]
 	echo "################################################################"
-	echo "Installing package nr.  "$count " " $PKG
+	tput setaf 3;echo "Installing package nr.  "$count " " $PKG;tput sgr0;
 	echo "################################################################"
-    yay -S --noconfirm $PKG
     sleep 3
 done
 
