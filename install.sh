@@ -64,6 +64,24 @@ echo "--------------------------------------------------------------------------
 
 echo -e "\nPerforming Pacstrap Operation...\n"
 sleep 3
+func_install() {
+	if pacstrap /mnt -Qi $1 &> /dev/null; then
+		tput setaf 2
+  		echo "###############################################################################"
+  		echo "################## The package "$1" is already installed"
+      	echo "###############################################################################"
+      	echo
+		tput sgr0
+	else
+    	tput setaf 3
+    	echo "###############################################################################"
+    	echo "##################  Installing package "  $1
+    	echo "###############################################################################"
+    	echo
+    	tput sgr0
+    	pacstrap /mnt $1
+    fi
+}
 # edit and adjust the "pkgs" file for desired packages (don't worry about any extra white spaces or new lines or comments as they will be omitted using sed and tr)
 echo
 echo "########################################################"
@@ -82,10 +100,10 @@ count = 0
 for pkg in "${i[@]}" ; do
 	count=$[count+1]
 	echo "################################################################"
-	echo "Installing package nr.  "$count " " $pkg
+	tput setaf 3;echo "Installing package nr.  "$count " " $pkg;tput sgr0;
 	echo "################################################################"
-	pacstrap /mnt $pkg
-  sleep 3
+sleep 3
+func_install
 done
 
 echo
