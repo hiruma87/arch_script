@@ -26,8 +26,8 @@ func_install() {
 		tput setaf 2
   		echo "###############################################################################"
   		echo "################## The package "$1" is already installed"
-      	echo "###############################################################################"
-      	echo
+      		echo "###############################################################################"
+      		echo
 		tput sgr0
 	else
     	tput setaf 3
@@ -60,7 +60,7 @@ PKGS=(
     #'yuzu-mainline-bin'
     'lutris-git'
     #'pamac-all'
-    #'twitch-bin'
+    'twitch-bin'
     #'facebook-nativefier'
     
     # FONTS----------------------------------------------------------------
@@ -72,7 +72,7 @@ PKGS=(
     'ttf-sazanami'
     'ttf-koruri'
     'ttf-monapo'
-    'ttf-mplus'
+    #'ttf-mplus'
     'ttf-vlgothic'
 )
 
@@ -82,6 +82,7 @@ for PKG in "${PKGS[@]}"; do
 	echo "################################################################"
 	tput setaf 3;echo "Installing package nr.  "$count " " $PKG;tput sgr0;
 	echo "################################################################"
+	func_install $PKG
     sleep 3
 done
 
