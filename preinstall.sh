@@ -24,7 +24,9 @@ echo '##################################################################'
 echo 'Change pacman.conf'
 echo '##################################################################'
 sleep 2
-sed -i 's #Color Color ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf
+
+sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf
+
 #echo '[multilib]
 #Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 sleep 2
@@ -123,7 +125,7 @@ func_install() {
 i=(
 base-devel
 intel-ucode
-linux-headers
+linux--zen-headers
 grub efibootmgr
 os-prober
 mtools
@@ -140,11 +142,11 @@ count = 0
 for pkg in "${i[@]}" ; do
 	count=$[count+1]
 	echo "################################################################"
-	echo "Installing package nr.  "$count " " $pkg
+	tput setaf 3;echo "Installing package nr.  "$count " " $pkg;tput sgr0;
 	echo "################################################################"
 	
   sleep 3
-func_install
+func_install $pkg
 done
 
 echo "Done"
@@ -157,7 +159,7 @@ echo 'Compile kernel mkinitcpio'
 echo '##################################################################'
 sleep 2
 
-mkinitcpio -p linux
+mkinitcpio -p linux-zen
 sleep 2
 
 echo '##################################################################'
