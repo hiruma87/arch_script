@@ -46,11 +46,13 @@ PKGS=(
 
     'timeshift'                 # Backup and Restore
     #'rtl8812au-dkms-git'
+    'android-file-transfer-linux-git'
     
     # COMMUNICATIONS ------------------------------------------------------
 
-    #'whatsapp-nativefier'
-    'twitter-nativefier'
+    'whatsapp-nativefier'
+    'tweetdeck-desktop'
+    'appimaglauncher'
 
     # THEMES --------------------------------------------------------------
 
