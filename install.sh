@@ -13,6 +13,9 @@ sleep 3
 # mount the ROOT partition on "/mnt"
 mount /dev/sda2 /mnt
 sleep 3
+#mount home partition
+mount /dev/sda3 /mnt/home
+
 # create necessary directories
 mkdir -p /mnt/boot/EFI
 sleep 3
