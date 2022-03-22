@@ -47,6 +47,7 @@ echo "Installation of the core software"
 ###############################################################################
 
 list=(
+xorg-server
 lightdm
 xfce4
 xfce4-goodies
