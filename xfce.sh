@@ -47,7 +47,7 @@ echo "Installation of the core software"
 ###############################################################################
 
 list=(
-sddm
+lightdm
 xfce4
 xfce4-goodies
 cups
