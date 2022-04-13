@@ -136,7 +136,6 @@ wpa_supplicant
 dialog
 ntfs-3g
 gvfs
-git
 )
 
 for pkg in "${i[@]}" ; do
