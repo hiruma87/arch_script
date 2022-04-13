@@ -92,8 +92,6 @@ ttf-ubuntu-font-family
 tamsyn-font
 )
 
-count=0
-
 for name in "${list[@]}" ; do
 	count=$[count+1]
 	echo "################################################################"
