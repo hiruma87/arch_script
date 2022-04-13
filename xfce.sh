@@ -104,7 +104,7 @@ done
 
 
 tput setaf 5;echo "################################################################"
-echo "Enabling sddm as display manager"
+echo "Enabling lightdm as display manager"
 echo "################################################################"
 echo;tput sgr0
 sudo systemctl enable lightdm.service
