@@ -54,7 +54,6 @@ xfce4-goodies
 cups
 gutenprint
 qbittorrent
-pulseaudio
 pulseaudio-bluetooth
 bluez
 bluez-libs
