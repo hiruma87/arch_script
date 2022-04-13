@@ -76,6 +76,8 @@ xfwm4-themes
 galculator
 networkmanager-openvpn
 easy-rsa
+udiskie
+udisks2
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
