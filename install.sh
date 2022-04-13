@@ -70,6 +70,7 @@ linux-lts
 linux-firmware
 vim
 bash-completion
+git
 )
 
 for pkg in "${i[@]}" ; do
