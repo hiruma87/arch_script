@@ -66,7 +66,7 @@ echo
 
 i=(
 base
-linux-zen
+linux-lts
 linux-firmware
 vim
 bash-completion
