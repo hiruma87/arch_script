@@ -46,13 +46,13 @@ PKGS=(
 
     'timeshift'                 # Backup and Restore
     #'rtl8812au-dkms-git'
-    'android-file-transfer-linux-git'
+    #'android-file-transfer-linux-git'
     
     # COMMUNICATIONS ------------------------------------------------------
 
-    'whatsapp-nativefier'
-    'tweetdeck-desktop'
-    'appimaglauncher'
+    #'whatsapp-nativefier'
+    #'tweetdeck-desktop'
+    #'appimaglauncher'
 
     # THEMES --------------------------------------------------------------
 
@@ -60,9 +60,9 @@ PKGS=(
     # APPS ----------------------------------------------------------------
 
     #'yuzu-mainline-bin'
-    'lutris-git'
+    #'lutris-git'
     #'pamac-all'
-    'twitch-bin'
+    #'twitch-bin'
     #'facebook-nativefier'
     
     # FONTS----------------------------------------------------------------
@@ -73,7 +73,7 @@ PKGS=(
     'ttf-hanazono'
     'ttf-sazanami'
     'ttf-koruri'
-    'ttf-monapo'
+    #'ttf-monapo'
     #'ttf-mplus'
     'ttf-vlgothic'
 )
@@ -87,9 +87,8 @@ for PKG in "${PKGS[@]}"; do
 	func_install $PKG
     sleep 3
 done
-
-sudo pacman -S steam
     sleep 3
+sudo systemctl enable cronie.service
 echo
 echo "Done!"
 echo
