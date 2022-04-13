@@ -125,7 +125,7 @@ func_install() {
 i=(
 base-devel
 intel-ucode
-linux-zen-headers
+linux-lts-headers
 grub efibootmgr
 os-prober
 mtools
@@ -138,7 +138,7 @@ ntfs-3g
 gvfs
 git
 )
-count = 0
+
 for pkg in "${i[@]}" ; do
 	count=$[count+1]
 	echo "################################################################"
