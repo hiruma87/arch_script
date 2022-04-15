@@ -49,6 +49,8 @@ echo "Installation of the core software"
 list=(
 xorg-server
 lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
 xfce4
 xfce4-goodies
 cups
@@ -63,7 +65,6 @@ nvidia-lts
 xarchiver
 network-manager-applet
 unzip
-smplayer
 keepassxc
 firefox
 vivaldi
@@ -78,6 +79,7 @@ networkmanager-openvpn
 easy-rsa
 udiskie
 udisks2
+flatpak
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
