@@ -14,6 +14,7 @@ sleep 3
 mount /dev/sda2 /mnt
 sleep 3
 #mount home partition
+mkdir -p /mnt/home
 mount /dev/sda3 /mnt/home
 
 # create necessary directories
