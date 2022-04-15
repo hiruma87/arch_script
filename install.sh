@@ -76,4 +76,6 @@ cat /mnt/etc/fstab
 sleep 3
 echo -e "\nDone.\n\nBase installation is now complete.\n\n"
 sleep 3
+curl https://raw.githubusercontent.com/hiruma87/arch_script/main/preinstall.sh -o preinstall.sh
+cp -rf preinstall.sh /mnt
 arch-chroot /mnt
