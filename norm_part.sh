@@ -29,6 +29,25 @@ mkfs.ext4 /dev/sda3
 
 echo -e "\nDone.\n\n"
 sleep 3
+echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
+echo -e "\nMounting Partitions...\n"
+sleep 3
+# mount the ROOT partition on "/mnt"
+mount /dev/sda2 /mnt
+sleep 3
+#mount home partition
+mkdir -p /mnt/home
+mount /dev/sda3 /mnt/home
+
+# create necessary directories
+mkdir -p /mnt/boot/EFI
+sleep 3
+# mount the EFI partition on "/mnt/boot"
+mount /dev/sda1 /mnt/boot/EFI
+sleep 3
+lsblk
+sleep 3
+echo -e "\nDone.\n\n"
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 sleep 3
