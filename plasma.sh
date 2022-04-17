@@ -37,13 +37,12 @@ func_category Fonts
 list=(
 xorg-server
 sddm
-nvidia
+nvidia-lts
 plasma
 packagekit-qt5
 bluedevil
 pulseaudio
 pulseaudio-bluetooth
-electron
 thunar
 thunar-volman
 thunar-archive-plugin
@@ -65,9 +64,11 @@ smplayer
 python-pip
 xarchiver
 unzip
-openvpn
+networkmanager-openvpn
 easy-rsa
 ark
+udiskie
+flatpak
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
