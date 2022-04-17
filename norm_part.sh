@@ -21,11 +21,11 @@ mkfs.fat -F 32 /dev/sda1
 sleep 3
 
 # format partition 2
-mkfs.ext4 /dev/sda2
+mkfs.btrfs /dev/sda2
 sleep 3
 
 #format patition 3
-mkfs.ext4 /dev/sda3
+mkfs.btrfs /dev/sda3
 
 echo -e "\nDone.\n\n"
 sleep 3
