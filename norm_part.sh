@@ -21,11 +21,11 @@ mkfs.fat -F 32 /dev/sda1
 sleep 3
 
 # format partition 2
-mkfs.btrfs /dev/sda2
+mkfs.ext4 -f /dev/sda2
 sleep 3
 
 #format patition 3
-mkfs.btrfs /dev/sda3
+mkfs.ext4 -f /dev/sda3
 
 echo -e "\nDone.\n\n"
 sleep 3
@@ -50,4 +50,8 @@ lsblk
 sleep 3
 echo -e "\nDone.\n\n"
 echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+sleep 3
+curl https://raw.githubusercontent.com/hiruma87/arch_script/main/install.sh -o install.sh
+sleep 3
+chmod +x install.sh
 sleep 3
