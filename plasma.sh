@@ -64,6 +64,7 @@ smplayer
 python-pip
 xarchiver
 unzip
+unrar
 networkmanager-openvpn
 easy-rsa
 ark
