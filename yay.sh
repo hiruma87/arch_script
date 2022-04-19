@@ -45,6 +45,9 @@ PKGS=(
     # UTILITIES -----------------------------------------------------------
 
     'timeshift'                 # Backup and Restore
+    'aic94xx-firmware'
+    'wd719x-firmware'
+    'upd72020x-fw'
     #'rtl8812au-dkms-git'
     #'android-file-transfer-linux-git'
     
