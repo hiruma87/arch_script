@@ -48,6 +48,7 @@ PKGS=(
     'aic94xx-firmware'
     'wd719x-firmware'
     'upd72020x-fw'
+    'linux-firmware-qlogic'
     #'rtl8812au-dkms-git'
     #'android-file-transfer-linux-git'
     
