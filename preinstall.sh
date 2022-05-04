@@ -125,7 +125,7 @@ func_install() {
 i=(
 base-devel
 intel-ucode
-linux-lts-headers
+linux-zen-headers
 grub efibootmgr
 os-prober
 mtools
