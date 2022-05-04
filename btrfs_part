@@ -1,0 +1,29 @@
+
+echo "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+echo -e "\nFormatting Partitions...\n"
+sleep 3
+
+# wipe file system of the installation destination disk
+wipefs --all /dev/sda
+sleep 3
+
+# create a new EFI system partition of size 512 MiB with partition label as "BOOT"
+sgdisk -n 0:0:+300M -t 0:ef00 -c 0:BOOT /dev/sda
+sleep 3
+
+# create a new Linux x86-64 root (/) partition on the remaining space with partition label as "ROOT"
+sgdisk -n 0:0:+150G -t 0:8304 -c 0:ROOT /dev/sda
+sleep 3
+# Create a new linux home partition
+sgdisk -n 0:0:0 -t 0:8304 -c 0:HOME /dev/sda
+
+mkfs.vfat -F 32 -n EFI /dev/sda1
+mkfs.btrfs -LF ROOT /dev/sda2
+mkfs.xfs -LF HOME /dev/sda3
+mount /dev/sda2 /mnt
+btrfs sub cr /mnt/@
+umount /mnt
+mount -o relatime,space_cache=v2,ssd,compress=lzo,subvol=@ /dev/sda2 /mnt
+mkdir -p /mnt/{boot/efi,home}
+mount /dev/sda1 /mnt/boot/efi/
+mount /dev/sda3 /mnt/home/
