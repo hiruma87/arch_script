@@ -41,3 +41,12 @@ sleep 3
 mount /dev/sda1 /mnt/boot/efi/
 sleep 3
 mount -o noatime,space_cache=v2,ssd,compress=zstd,subvol=@home /dev/sda3 /mnt/home
+lsblk
+sleep 3
+echo -e "\nDone.\n\n"
+echo "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+sleep 3
+curl https://raw.githubusercontent.com/hiruma87/arch_script/main/install.sh -o install.sh
+sleep 3
+chmod +x install.sh
+sleep 3
