@@ -80,6 +80,7 @@ easy-rsa
 udiskie
 udisks2
 flatpak
+gvfs-mtp
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
