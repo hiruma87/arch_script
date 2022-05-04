@@ -17,11 +17,11 @@ sleep 3
 # Create a new linux home partition
 sgdisk -n 0:0:0 -t 0:8304 -c 0:HOME /dev/sda
 sleep 3
-mkfs.vfat -F 32 -n EFI /dev/sda1
+mkfs.vfat -F 32 /dev/sda1
 sleep 3
-mkfs.btrfs -LF ROOT /dev/sda2
+mkfs.btrfs -f /dev/sda2
 sleep 3
-mkfs.xfs -LF HOME /dev/sda3
+mkfs.xfs -f /dev/sda3
 mount /dev/sda2 /mnt
 sleep 3
 btrfs sub cr /mnt/@
