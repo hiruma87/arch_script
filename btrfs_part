@@ -12,7 +12,7 @@ sgdisk -n 0:0:+300M -t 0:ef00 -c 0:BOOT /dev/sda
 sleep 3
 
 # create a new Linux x86-64 root (/) partition on the remaining space with partition label as "ROOT"
-sgdisk -n 0:0:+150G -t 0:8304 -c 0:ROOT /dev/sda
+sgdisk -n 0:0:+200G -t 0:8304 -c 0:ROOT /dev/sda
 sleep 3
 # Create a new linux home partition
 sgdisk -n 0:0:0 -t 0:8304 -c 0:HOME /dev/sda
