@@ -61,7 +61,7 @@ bluez
 bluez-libs
 bluez-utils
 blueberry
-nvidia-lts
+nvidia-dkms
 xarchiver
 network-manager-applet
 unzip
