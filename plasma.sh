@@ -37,7 +37,7 @@ func_category Fonts
 list=(
 xorg-server
 sddm
-nvidia-lts
+nvidia-dkms
 plasma
 packagekit-qt5
 bluedevil
@@ -51,10 +51,6 @@ kcalc
 konsole
 cups
 gutenprint
-wine-staging
-wine-gecko
-wine-mono
-xfce4-panel
 kvantum
 firefox
 vivaldi
@@ -69,7 +65,6 @@ networkmanager-openvpn
 easy-rsa
 ark
 udiskie
-flatpak
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
