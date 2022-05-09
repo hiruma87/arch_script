@@ -26,7 +26,7 @@ sleep 3
 mount /dev/sda2 /mnt
 sleep 3
 btrfs sub cr /mnt/@
-#sleep 3
+sleep 3
 #umount /mnt
 #sleep 3
 #mount /dev/sda3 /mnt
@@ -35,13 +35,13 @@ btrfs sub cr /mnt/@home
 sleep 3
 umount /mnt
 sleep 3
-mount -o noatime,space_cache=v2,ssd,compress=zstd,subvol=@ /dev/sda2 /mnt
+mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
 sleep 3
 mkdir -p /mnt/{boot/efi,home}
 sleep 3
 mount /dev/sda1 /mnt/boot/efi/
 sleep 3
-mount -o noatime,space_cache=v2,ssd,compress=zstd,subvol=@home /dev/sda2 /mnt/home
+mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
 lsblk
 sleep 3
 echo -e "\nDone.\n\n"
