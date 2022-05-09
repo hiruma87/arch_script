@@ -19,9 +19,9 @@ sgdisk -n 0:0:0 -t 0:8304 -c 0:HOME /dev/sda
 sleep 3
 mkfs.vfat -F 32 /dev/sda1
 sleep 3
-mkfs.btrfs -f /dev/sda2
+mkfs.btrfs -F /dev/sda2
 sleep 3
-mkfs.xfs -f /dev/sda3
+mkfs.btrfs -F /dev/sda3
 mount /dev/sda2 /mnt
 sleep 3
 btrfs sub cr /mnt/@
