@@ -50,6 +50,7 @@ PKGS=(
     'upd72020x-fw'
     'linux-firmware-qlogic'
     'jmtpfs'
+    'zramd'
     #'rtl8812au-dkms-git'
     #'android-file-transfer-linux-git'
     
@@ -94,6 +95,7 @@ for PKG in "${PKGS[@]}"; do
 done
     sleep 3
 sudo systemctl enable cronie.service
+sudo systemctl enable --now zramd.service
 echo
 echo "Done!"
 echo
