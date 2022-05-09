@@ -49,6 +49,7 @@ PKGS=(
     'wd719x-firmware'
     'upd72020x-fw'
     'linux-firmware-qlogic'
+    'jmtpfs'
     #'rtl8812au-dkms-git'
     #'android-file-transfer-linux-git'
     
