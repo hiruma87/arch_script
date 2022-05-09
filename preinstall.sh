@@ -40,7 +40,7 @@ echo '##################################################################'
 echo 'Update mirrorlist'
 echo '##################################################################'
 sleep 2
-pacman -Syyu --noconfirm
+pacman -Sy
 sleep 2
 echo "Done"
 sleep 2
@@ -136,6 +136,7 @@ wpa_supplicant
 dialog
 ntfs-3g
 gvfs
+gvfs-mtp
 )
 
 for pkg in "${i[@]}" ; do
@@ -158,7 +159,7 @@ echo 'Compile kernel mkinitcpio'
 echo '##################################################################'
 sleep 2
 
-mkinitcpio -p linux-lts
+mkinitcpio -p linux-zen
 sleep 2
 
 echo '##################################################################'
