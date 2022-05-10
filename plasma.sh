@@ -43,9 +43,7 @@ packagekit-qt5
 bluedevil
 pulseaudio
 pulseaudio-bluetooth
-thunar
-thunar-volman
-thunar-archive-plugin
+dolphin
 kwrite
 kcalc
 konsole
@@ -63,7 +61,6 @@ unzip
 unrar
 networkmanager-openvpn
 easy-rsa
-ark
 udiskie
 awesome-terminal-fonts
 adobe-source-sans-fonts
