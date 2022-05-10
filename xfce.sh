@@ -75,6 +75,9 @@ galculator
 networkmanager-openvpn
 easy-rsa
 udiskie
+wine-staging
+wine-mono
+wine-gecko
 awesome-terminal-fonts
 adobe-source-sans-fonts
 cantarell-fonts
