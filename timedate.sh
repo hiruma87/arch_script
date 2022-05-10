@@ -5,4 +5,4 @@ Name=Time Settings
 Exec=gnome-control-center datetime
 Icon=preferences-system
 Type=Application
-Categories=GTK;Settings;DesktopSettings;' >> '/usr/share/applications/timesettings.desktop'
+Categories=GTK;Settings;DesktopSettings;' >> /usr/share/applications/timesettings.desktop
