@@ -18,21 +18,83 @@
 
 tput setaf 5;
 echo "################################################################"
-echo "Run installation script"
+echo "Installing Xorg"
 echo "################################################################"
 echo;tput sgr0
-
 sh 2_xorg.sh
-sh 3_graphic.sh
-sh 4_misc.sh
-sh 5_network.sh
-sh 6_audio.sh
-sh 7_bluetooth.sh
-sh 8_browser.sh
-sh 9_printer.sh
-sh 10_wine.sh
-sh 11_fonts.sh
+echo "Done"
 
+tput setaf 5;
+echo "################################################################"
+echo "Installing Graphic Card Driver"
+echo "################################################################"
+echo;tput sgr0
+sh 3_graphic.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Misc Program"
+echo "################################################################"
+echo;tput sgr0
+sh 4_misc.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Network Open VPN"
+echo "################################################################"
+echo;tput sgr0
+sh 5_network.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Audio Driver"
+echo "################################################################"
+echo;tput sgr0
+sh 6_audio.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Bluetooth Driver"
+echo "################################################################"
+echo;tput sgr0
+sh 7_bluetooth.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Web Browser"
+echo "################################################################"
+echo;tput sgr0
+sh 8_browser.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Printer Driver"
+echo "################################################################"
+echo;tput sgr0
+sh 9_printer.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Wine"
+echo "################################################################"
+echo;tput sgr0
+sh 10_wine.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Fonts"
+echo "################################################################"
+echo;tput sgr0
+sh 11_fonts.sh
+echo "Done"
 ###############################################################################
 
 
