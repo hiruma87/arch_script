@@ -29,6 +29,9 @@ galculator
 easy-rsa
 udiskie
 keepassxc
+xarchiver
+unzip
+unrar
 )
 
 for name in "${list[@]}" ; do
