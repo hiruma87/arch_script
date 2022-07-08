@@ -25,6 +25,7 @@ list=(
 #network
 network-manager-applet
 networkmanager-openvpn
+easy-rsa
 )
 
 for name in "${list[@]}" ; do
