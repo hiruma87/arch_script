@@ -26,7 +26,6 @@ list=(
 qbittorrent
 python-pip
 galculator
-easy-rsa
 udiskie
 keepassxc
 xarchiver
