@@ -35,6 +35,7 @@ iso-flag-png
 mintlocale
 nemo-fileroller
 xed
+network-manager-applet
 galculator
 )
 
