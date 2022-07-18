@@ -35,6 +35,7 @@ iso-flag-png
 mintlocale
 nemo-fileroller
 xed
+galculator
 )
 
 for name in "${list[@]}" ; do
