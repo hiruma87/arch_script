@@ -32,6 +32,7 @@ unzip
 unrar
 smplayer
 flatpak
+neofetch
 )
 
 for name in "${list[@]}" ; do
