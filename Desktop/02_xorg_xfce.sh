@@ -27,7 +27,7 @@ xorg-server
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
-xfce
+xfce4
 xfce4-goodies
 network-manager-applet
 galculator
