@@ -31,6 +31,7 @@ keepassxc
 xarchiver
 unzip
 unrar
+smplayer
 )
 
 for name in "${list[@]}" ; do
