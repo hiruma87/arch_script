@@ -31,6 +31,7 @@ xarchiver
 unzip
 unrar
 smplayer
+flatpak
 )
 
 for name in "${list[@]}" ; do
