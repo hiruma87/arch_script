@@ -16,105 +16,97 @@
 ###############################################################################
 
 
-###############################################################################
-#
-#   DECLARATION OF FUNCTIONS
-#
-###############################################################################
-
-
-func_install() {
-	if pacman -Qi $1 &> /dev/null; then
-		tput setaf 2
-  		echo "###############################################################################"
-  		echo "################## The package "$1" is already installed"
-      	echo "###############################################################################"
-      	echo
-		tput sgr0
-	else
-    	tput setaf 3
-    	echo "###############################################################################"
-    	echo "##################  Installing package "  $1
-    	echo "###############################################################################"
-    	echo
-    	tput sgr0
-    	sudo pacman -S --noconfirm --needed $1
-    fi
-}
-
-###############################################################################
-echo "Installation of the core software"
-###############################################################################
-
-list=(
-xorg-server
-lightdm
-lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
-cinnamon
-cinnamon-translations
-gnome-terminal
-gnome-system-monitor
-iso-flag-png
-mintlocale
-nemo-fileroller
-nvidia-dkms
-cups
-gutenprint
-xed
-qbittorrent
-pulseaudio
-pulseaudio-bluetooth
-bluez
-bluez-libs
-bluez-utils
-blueberry
-python-pip
-wine-staging
-wine-mono
-wine-gecko
-firefox
-vivaldi
-vivaldi-ffmpeg-codecs
-keepassxc
-xarchiver
-unzip
-unrar
-udiskie
-networkmanager-openvpn
-easy-rsa
-awesome-terminal-fonts
-adobe-source-sans-fonts
-cantarell-fonts
-noto-fonts
-ttf-bitstream-vera
-ttf-dejavu
-ttf-droid
-ttf-hack
-ttf-inconsolata
-ttf-liberation
-ttf-roboto
-ttf-ubuntu-font-family
-tamsyn-font
-
-)
-
-count=0
-
-for name in "${list[@]}" ; do
-	count=$[count+1]
-	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
-	func_install $name
-done
-
-###############################################################################
-
-tput setaf 5;echo "################################################################"
-echo "Enabling sddm as display manager"
+tput setaf 5;
+echo "################################################################"
+echo "Installing Xorg"
 echo "################################################################"
 echo;tput sgr0
-sudo systemctl enable sddm.service -f
-sudo systemctl enable org.cups.cupsd.service
+sh 02_xorg_cinn.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Graphic Card Driver"
+echo "################################################################"
+echo;tput sgr0
+sh 03_graphic.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Misc Program"
+echo "################################################################"
+echo;tput sgr0
+sh 04_misc.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Network Open VPN"
+echo "################################################################"
+echo;tput sgr0
+sh 05_network.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Audio Driver"
+echo "################################################################"
+echo;tput sgr0
+sh 06_audio.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Bluetooth Driver"
+echo "################################################################"
+echo;tput sgr0
+sh 07_bluetooth.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Web Browser"
+echo "################################################################"
+echo;tput sgr0
+sh 08_browser.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Printer Driver"
+echo "################################################################"
+echo;tput sgr0
+sh 09_printer.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Wine"
+echo "################################################################"
+echo;tput sgr0
+sh 10_wine.sh
+echo "Done"
+
+tput setaf 5;
+echo "################################################################"
+echo "Installing Fonts"
+echo "################################################################"
+echo;tput sgr0
+sh 11_fonts.sh
+echo "Done"
+
+###############################################################################
+
+
+tput setaf 5;
+echo "################################################################"
+echo "Enabling lightdm as display manager"
+echo "################################################################"
+echo;tput sgr0
+
+sudo systemctl enable lightdm.service
+sudo systemctl enable cups.service
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
