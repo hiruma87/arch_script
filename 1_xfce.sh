@@ -21,7 +21,7 @@ echo "################################################################"
 echo "Installing Xorg"
 echo "################################################################"
 echo;tput sgr0
-sh 2_xorg.sh
+sh 2_xorg_xfce.sh
 echo "Done"
 
 tput setaf 5;
