@@ -34,6 +34,7 @@ gnome-system-monitor
 iso-flag-png
 mintlocale
 nemo-fileroller
+xed
 )
 
 for name in "${list[@]}" ; do
