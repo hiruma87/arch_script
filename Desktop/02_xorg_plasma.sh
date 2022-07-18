@@ -31,6 +31,7 @@ dolphin
 kwrite
 kcalc
 kvantum
+bluedevil
 )
 
 for name in "${list[@]}" ; do
