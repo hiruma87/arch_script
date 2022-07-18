@@ -58,14 +58,6 @@ echo "Done"
 
 tput setaf 5;
 echo "################################################################"
-echo "Installing Bluetooth Driver"
-echo "################################################################"
-echo;tput sgr0
-sh 07_bluetooth.sh
-echo "Done"
-
-tput setaf 5;
-echo "################################################################"
 echo "Installing Web Browser"
 echo "################################################################"
 echo;tput sgr0
