@@ -29,6 +29,7 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 xfce4
 xfce4-goodies
+galculator
 )
 
 for name in "${list[@]}" ; do
