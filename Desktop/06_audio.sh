@@ -31,8 +31,8 @@ pavucontrol
 #alsa-lib
 #alsa-plugins
 #alsa-utils
-lib32-alsa-plugins
-lib32-alsa-lib
+#lib32-alsa-plugins
+#lib32-alsa-lib
 #playerctl
 #volumeicon
 )
