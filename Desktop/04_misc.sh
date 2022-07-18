@@ -25,7 +25,6 @@ list=(
 #misc
 qbittorrent
 python-pip
-galculator
 udiskie
 keepassxc
 xarchiver
