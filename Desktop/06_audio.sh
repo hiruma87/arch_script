@@ -26,14 +26,14 @@ pulseaudio
 pulseaudio-alsa
 lib32-libpulse
 pavucontrol
-alsa-firmware
-alsa-lib
-alsa-plugins
-alsa-utils
+#alsa-firmware
+#alsa-lib
+#alsa-plugins
+#alsa-utils
 lib32-alsa-plugins
 lib32-alsa-lib
-playerctl
-volumeicon
+#playerctl
+#volumeicon
 )
 
 for name in "${list[@]}" ; do
