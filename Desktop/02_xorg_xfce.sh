@@ -24,13 +24,13 @@ echo "Installation of the core software"
 list=(
 #org-sercer and desktop
 xorg-server
-lightdm
-lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
-xfce4
-xfce4-goodies
-network-manager-applet
-galculator
+sddm
+plasma
+packagekit-qt5
+dolphin
+kwrite
+kcalc
+kvantum
 )
 
 for name in "${list[@]}" ; do
