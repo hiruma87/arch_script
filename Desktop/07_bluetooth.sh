@@ -24,7 +24,6 @@ echo "Installation of the core software"
 list=(
 
 #bluetooth
-pulseaudio-bluetooth
 bluez
 bluez-libs
 bluez-utils
