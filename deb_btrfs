@@ -1,0 +1,11 @@
+umount /target/efi/boot
+umount /target
+mount /dev/sda2 /mnt
+cd /mnt
+mv @rootfs @
+btrfs subvol cr @home
+cd /target
+mkdir home
+mkdir -p /efi/boot
+mount -o noatime,space_cache=v2,ssd,discard=async,subvol=@ /dev/sda2 /target
+mount -o noatime,space_cache=v2,ssd,discard=async,subvol=@home /dev/sda2 /target/home
