@@ -101,7 +101,7 @@ echo "################################################################"
 echo "Adding Time Date GUI"
 echo "################################################################"
 echo;tput sgr0
-sh timedate.sh
+sudo sh timedate.sh
 echo "Done"
 
 
