@@ -51,6 +51,7 @@ PKGS=(
     'linux-firmware-qlogic'
     'jmtpfs'
     'zramd'
+    'gksu'
     #'rtl8812au-dkms-git'
     #'android-file-transfer-linux-git'
     
@@ -65,10 +66,10 @@ PKGS=(
 
     # APPS ----------------------------------------------------------------
 
-    #'yuzu-mainline-bin'
-    #'lutris-git'
+    'yuzu-mainline-bin'
+    'lutris-git'
     #'pamac-all'
-    #'twitch-bin'
+    'twitch-bin'
     #'facebook-nativefier'
     
     # FONTS----------------------------------------------------------------
