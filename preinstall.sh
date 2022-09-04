@@ -124,6 +124,7 @@ i=(
 base-devel
 intel-ucode
 linux-zen-headers
+linux-lts-headers
 grub efibootmgr
 os-prober
 mtools
@@ -158,6 +159,7 @@ echo '##################################################################'
 sleep 1
 
 mkinitcpio -p linux-zen
+mkinitcpio -p linux-lts
 sleep 1
 
 echo '##################################################################'
