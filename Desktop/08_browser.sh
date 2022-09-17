@@ -24,8 +24,9 @@ echo "Installation of the core software"
 list=(
 #web browser
 firefox
-vivaldi
-vivaldi-ffmpeg-codecs
+#vivaldi
+#vivaldi-ffmpeg-codecs
+chromium
 )
 
 for name in "${list[@]}" ; do
