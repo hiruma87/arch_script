@@ -23,7 +23,7 @@ echo "Installation of the core software"
 
 list=(
 pulseaudio
-pulseaudio-alsa
+#pulseaudio-alsa
 pulseaudio-bluetooth
 lib32-libpulse
 pavucontrol
