@@ -45,10 +45,10 @@ PKGS=(
     # UTILITIES -----------------------------------------------------------
 
     'timeshift'                 # Backup and Restore
-    'aic94xx-firmware'
-    'wd719x-firmware'
-    'upd72020x-fw'
-    'linux-firmware-qlogic'
+    #'aic94xx-firmware'
+    #'wd719x-firmware'
+    #'upd72020x-fw'
+    #'linux-firmware-qlogic'
     'jmtpfs'
     'zramd'
     'gksu'
@@ -69,7 +69,7 @@ PKGS=(
     'yuzu-mainline-bin'
     'lutris-git'
     #'pamac-all'
-    'twitch-bin'
+    #'twitch-bin'
     #'facebook-nativefier'
     
     # FONTS----------------------------------------------------------------
