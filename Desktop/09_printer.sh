@@ -25,6 +25,9 @@ list=(
 #printer
 cups
 gutenprint
+sane
+xsane
+ipp=usb
 )
 
 for name in "${list[@]}" ; do
