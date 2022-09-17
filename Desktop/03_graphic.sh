@@ -23,7 +23,7 @@ echo "Installation of the core software"
 
 list=(
 #GP
-nvidia-dkms
+nvidia
 )
 
 for name in "${list[@]}" ; do
