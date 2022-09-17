@@ -133,6 +133,7 @@ sudo systemctl enable lightdm.service
 sudo systemctl enable cups.service
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
+sudo systemctl start ipp-usb.service
 sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
 
 tput setaf 11;
