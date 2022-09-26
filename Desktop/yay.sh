@@ -75,14 +75,14 @@ PKGS=(
     # FONTS----------------------------------------------------------------
     # Japanese
     'adobe-source-han-sans-jp-fonts'
-    'adobe-source-han-serif-jp-fonts'
-    'otf-ipafont'
-    'ttf-hanazono'
-    'ttf-sazanami'
-    'ttf-koruri'
+    #'adobe-source-han-serif-jp-fonts'
+    #'otf-ipafont'
+    #'ttf-hanazono'
+    #'ttf-sazanami'
+    #'ttf-koruri'
     #'ttf-monapo'
     #'ttf-mplus'
-    'ttf-vlgothic'
+    #'ttf-vlgothic'
 )
 
 coubt = 0
