@@ -159,8 +159,9 @@ echo 'Compile kernel mkinitcpio'
 echo '##################################################################'
 sleep 1
 
-mkinitcpio -p linux-zen
-mkinitcpio -p linux-lts
+#mkinitcpio -p linux-zen
+#mkinitcpio -p linux-lts
+mkinitcpio -p linux
 sleep 1
 
 echo '##################################################################'
