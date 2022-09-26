@@ -9,4 +9,4 @@ deltarpm=true
 max_parallel_downloads=5
 defaultyes=true' >> sudo nano /etc/dnf/dnf.conf
 
-sudo dnf install akmod-nvidia neofetch git vim -y
+sudo dnf install akmod-nvidia neofetch git vim udiskie -y
