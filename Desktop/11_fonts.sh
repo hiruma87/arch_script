@@ -23,19 +23,9 @@ echo "Installation of the core software"
 
 list=(
 #fonts
-awesome-terminal-fonts
-adobe-source-sans-fonts
-cantarell-fonts
-noto-fonts
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
-ttf-hack
-ttf-inconsolata
-ttf-liberation
-ttf-roboto
-ttf-ubuntu-font-family
-tamsyn-font
 )
 
 for name in "${list[@]}" ; do
