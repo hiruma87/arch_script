@@ -1,4 +1,4 @@
-sudo dnf update --y
+sudo dnf update -y
 
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -9,4 +9,4 @@ deltarpm=true
 max_parallel_downloads=5
 defaultyes=true' >> sudo nano /etc/dnf/dnf.conf
 
-sudo dnf install akmod-nvidia --y
+sudo dnf install akmod-nvidia neofetch git vim -y
