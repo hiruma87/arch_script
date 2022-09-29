@@ -22,10 +22,13 @@ echo "Installation of the core software"
 ###############################################################################
 
 list=(
-pulseaudio
+#pulseaudio
 #pulseaudio-alsa
-pulseaudio-bluetooth
-lib32-libpulse
+#pulseaudio-bluetooth
+#lib32-libpulse
+pipewire
+pipewire-pulse
+lib32-pipewire
 pavucontrol
 #alsa-firmware
 #alsa-lib
@@ -42,6 +45,11 @@ for name in "${list[@]}" ; do
 	echo "################################################################"
 	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
 	echo "################################################################"
-	sleep 5
+	sleep 1
 	func_install $name
 done
+
+sudo rm -rf /etc/pipewire
+sleep 1
+sudo cp -rf /usr/share/pipewire/ /etc/pipewire/
+sleep 1
