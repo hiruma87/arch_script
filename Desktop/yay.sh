@@ -52,6 +52,7 @@ PKGS=(
     'jmtpfs'
     'zramd'
     'gksu'
+    'microsoft-edge-stable-bin'
     #'rtl8812au-dkms-git'
     #'android-file-transfer-linux-git'
     
@@ -66,7 +67,7 @@ PKGS=(
 
     # APPS ----------------------------------------------------------------
 
-    'yuzu-mainline-bin'
+    #'yuzu-mainline-bin'
     'lutris-git'
     #'pamac-all'
     #'twitch-bin'
