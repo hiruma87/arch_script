@@ -26,7 +26,7 @@ list=(
 firefox
 #vivaldi
 #vivaldi-ffmpeg-codecs
-chromium
+#chromium
 )
 
 for name in "${list[@]}" ; do
