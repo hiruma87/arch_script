@@ -25,13 +25,12 @@ list=(
 #org-sercer and desktop
 xorg-server
 lightdm
-lightdm-slick-greeter
-#lightdm-gtk-greeter
-#lightdm-gtk-greeter-settings
+#lightdm-slick-greeter
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
 xfce4
 xfce4-goodies
 network-manager-applet
-galculator
 )
 
 for name in "${list[@]}" ; do
