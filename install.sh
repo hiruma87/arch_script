@@ -55,6 +55,9 @@ linux-firmware
 vim
 bash-completion
 git
+linux-firmware-marvell
+linux-firmware-qlogic
+linux-firmware-whence
 )
 
 for pkg in "${i[@]}" ; do
