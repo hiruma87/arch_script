@@ -52,14 +52,13 @@ PKGS=(
     'jmtpfs'
     'zramd'
     'gksu'
-    'microsoft-edge-stable-bin'
-    #'rtl8812au-dkms-git'
+    'hid-sony-panic-fix-dkms'
     #'android-file-transfer-linux-git'
     
     # COMMUNICATIONS ------------------------------------------------------
 
-    #'whatsapp-nativefier'
-    #'tweetdeck-desktop'
+    'whatsie'
+    'moderndeck-bin'
     #'appimaglauncher'
 
     # THEMES --------------------------------------------------------------
@@ -68,6 +67,7 @@ PKGS=(
     # APPS ----------------------------------------------------------------
 
     #'yuzu-mainline-bin'
+    'microsoft-edge-stable-bin'
     'lutris-git'
     #'pamac-all'
     #'twitch-bin'
