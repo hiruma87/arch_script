@@ -30,7 +30,6 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 xfce4
 xfce4-goodies
-network-manager-applet
 )
 
 for name in "${list[@]}" ; do
