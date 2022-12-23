@@ -69,6 +69,7 @@ PKGS=(
     #'yuzu-mainline-bin'
     'microsoft-edge-stable-bin'
     'lutris-git'
+    'ryujinx-git'
     #'pamac-all'
     #'twitch-bin'
     #'facebook-nativefier'
