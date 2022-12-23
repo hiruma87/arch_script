@@ -23,6 +23,7 @@ echo "Installation of the core software"
 
 list=(
 #network
+network-manager-applet
 networkmanager-openvpn
 easy-rsa
 )
