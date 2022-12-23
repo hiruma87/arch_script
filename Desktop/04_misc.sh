@@ -33,6 +33,7 @@ unrar
 smplayer
 flatpak
 neofetch
+galculator
 )
 
 for name in "${list[@]}" ; do
