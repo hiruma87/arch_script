@@ -39,7 +39,7 @@ mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@ /dev/sd
 sleep 3
 mkdir -p /mnt/{boot/efi,home}
 sleep 3
-mount /dev/sda1 /mnt/boot/efi/
+mount /dev/sda1 /mnt/boot
 sleep 3
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
 lsblk
