@@ -24,10 +24,10 @@ echo "Installation of the core software"
 list=(
 #org-sercer and desktop
 xorg-server
-#lightdm
-#lightdm-slick-greeter
-#lightdm-gtk-greeter
-#lightdm-gtk-greeter-settings
+lightdm
+lightdm-slick-greeter
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
 xfce4
 xfce4-goodies
 )
