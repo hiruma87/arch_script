@@ -37,7 +37,7 @@ umount /mnt
 sleep 3
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
 sleep 3
-mkdir -p /mnt/{boot/efi,home}
+mkdir -p /mnt/{boot,home}
 sleep 3
 mount /dev/sda1 /mnt/boot
 sleep 3
