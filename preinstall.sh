@@ -84,9 +84,10 @@ echo 'Set Hosts'
 echo '##################################################################'
 sleep 1
 
-hostnamectl set-hostname $host
-sleep 1
-hostnamectl
+#hostnamectl set-hostname $host
+#sleep 1
+echo $host >> /etc/hostname
+#hostnamectl
 sleep 1
 echo '127.0.0.1       localhost
 ::1             localhost
@@ -126,14 +127,15 @@ intel-ucode
 #linux-zen-headers
 #linux-lts-headers
 linux-headers
-grub efibootmgr
+grub
+efibootmgr
 os-prober
 mtools
 dosfstools
 networkmanager
-wireless_tools
-wpa_supplicant
-dialog
+#wireless_tools
+#wpa_supplicant
+#dialog
 ntfs-3g
 gvfs
 gvfs-mtp
