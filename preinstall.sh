@@ -92,11 +92,6 @@ echo 'echo $host >> /etc/hostname'
 echo $host >> /etc/hostname
 #hostnamectl
 sleep 1
-echo'echo '127.0.0.1       localhost
-::1             localhost
-127.0.1.1       asura.localdomain       asura
-ff02::1         ip6-allnodes
-ff02::2         ip6-allrouters' >> /etc/hosts'
 
 echo '127.0.0.1       localhost
 ::1             localhost
