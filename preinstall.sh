@@ -201,7 +201,7 @@ echo 'Create bootloader'
 echo '##################################################################'
 sleep 1
 
-grub-install --target=x86_64-efi --bootloader-id=ArchLinux --recheck
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux --recheck
 sleep 1
 
 echo '##################################################################'
