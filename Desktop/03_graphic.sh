@@ -23,7 +23,8 @@ echo "Installation of the core software"
 
 list=(
 #GP
-nvidia-dkms
+#nvidia-dkms
+nvidia
 nvidia-settings
 nvidia-utils
 )
