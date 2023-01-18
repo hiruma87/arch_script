@@ -24,7 +24,7 @@ echo '##################################################################'
 echo 'Change pacman.conf'
 echo '##################################################################'
 sleep 1
-echo 'sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf'
+echo "'sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf'"
 sleep 1
 sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf
 
@@ -51,12 +51,12 @@ echo '##################################################################'
 echo 'Set Local time'
 echo '##################################################################'
 sleep 1
-echo 'ln -sf /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime'
+echo "ln -sf /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime"
 ln -sf /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 sleep 1
 echo "Done"
 sleep 1
-echo 'hwclock --systohc'
+echo "hwclock --systohc"
 hwclock --systohc
 sleep 1
 echo "Done"
@@ -65,18 +65,18 @@ sleep 1
 echo '##################################################################'
 echo 'Setting Locale'
 echo '##################################################################'
-sleep 1
-echo 'sed -i 's #en_US.UTF-8 en_US.UTF-8 ' /etc/locale.gen'
+
+echo "sed -i 's #en_US.UTF-8 en_US.UTF-8 ' /etc/locale.gen"
 sed -i 's #en_US.UTF-8 en_US.UTF-8 ' /etc/locale.gen
 sleep 1
-echo "Done"
-sleep 1
-echo 'locale-gen'
+echo "locale-gen"
 locale-gen
 sleep 1
 echo "Done"
 sleep 1
-echo 'echo 'LANG=en_US.UTF-8' >> /etc/locale.conf'
+echo "Done"
+sleep 1
+echo "echo 'LANG=en_US.UTF-8' >> /etc/locale.conf"
 echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
 sleep 1
 echo "Done"
@@ -88,17 +88,32 @@ sleep 1
 
 #hostnamectl set-hostname $host
 #sleep 1
-echo 'echo $host >> /etc/hostname'
+echo "echo $host >> /etc/hostname"
 echo $host >> /etc/hostname
 #hostnamectl
 sleep 1
 
-echo '127.0.0.1       localhost
-::1             localhost
-127.0.1.1       asura.localdomain       asura
+echo '# The following lines are desirable for IPv4 capable hosts
+127.0.0.1       localhost
+127.0.1.1       localhost.domain   asura
+# The following lines are desirable for IPv6 capable hosts
+::1             localhost ip6-localhost ip6-loopback
 ff02::1         ip6-allnodes
 ff02::2         ip6-allrouters' >> /etc/hosts
 
+echo "Done"
+sleep 1
+echo '##################################################################'
+echo 'Compile kernel mkinitcpio'
+echo '##################################################################'
+
+#sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
+sleep 1
+#mkinitcpio -p linux-zen
+echo "mkinitcpio -p linux-lts"
+mkinitcpio -p linux-lts
+echo "mkinitcpio -p linux"
+mkinitcpio -p linux
 echo "Done"
 sleep 1
 
@@ -158,19 +173,6 @@ done
 echo "Done"
 sleep 1
 
-#sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
-
-echo '##################################################################'
-echo 'Compile kernel mkinitcpio'
-echo '##################################################################'
-sleep 1
-
-#mkinitcpio -p linux-zen
-#mkinitcpio -p linux-lts
-echo 'mkinitcpio -p linux'
-mkinitcpio -p linux
-sleep 1
-
 echo '##################################################################'
 echo 'Set root password'
 echo '##################################################################'
@@ -208,7 +210,7 @@ echo 'Create bootloader'
 echo '##################################################################'
 sleep 1
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux --recheck
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux
 sleep 1
 
 echo '##################################################################'
