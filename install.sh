@@ -36,7 +36,7 @@ func_install() {
     	echo "###############################################################################"
     	echo
     	tput sgr0
-    	pacstrap /mnt $1
+    	pacstrap -K /mnt $1
     fi
 }
 # edit and adjust the "pkgs" file for desired packages (don't worry about any extra white spaces or new lines or comments as they will be omitted using sed and tr)
@@ -49,9 +49,10 @@ echo
 i=(
 base
 #linux-zen
-#linux-lts
+linux-lts
 linux
 linux-firmware
+linux-lts-firmware
 vim
 bash-completion
 git
