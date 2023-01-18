@@ -20,7 +20,7 @@ sleep 1
 # Create a new linux home partition
 #sgdisk -n 0:0:0 -t 0:8304 -c 0:HOME /dev/sda
 #sleep 3
-mkfs.fat -f 32 /dev/sda1
+mkfs.fat -F 32 /dev/sda1
 sleep 1
 mkfs.btrfs -f /dev/sda2
 sleep 1
