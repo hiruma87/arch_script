@@ -8,13 +8,13 @@ wipefs --all /dev/sda
 sleep 1
 
 # create a new EFI system partition of size 512 MiB with partition label as "BOOT"
-sgdisk -n 0:0:+300M -t 0:ef00 -c 0 /dev/sda
+sgdisk -n 0:0:+300M -t 0:ef00 /dev/sda
 #sgdisk -n 0:0:+300M -t 0:ef00 -c 0:BOOT /dev/sda
 sleep 1
 
 # create a new Linux x86-64 root (/) partition on the remaining space with partition label as "ROOT"
 #sgdisk -n 0:0:+200G -t 0:8304 -c 0:ROOT /dev/sda
-sgdisk -n 0:0:0 -t 0:8304 -c 0 /dev/sda
+sgdisk -n 0:0:0 -t 0:8304 /dev/sda
 #sgdisk -n 0:0:0 -t 0:8304 -c 0:ROOT /dev/sda
 sleep 1
 # Create a new linux home partition
