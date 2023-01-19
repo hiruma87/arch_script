@@ -82,59 +82,21 @@ sleep 1
 echo "Done"
 
 echo '##################################################################'
-echo 'Set Hosts'
-echo '##################################################################'
-sleep 1
-
-#hostnamectl set-hostname $host
-#sleep 1
-echo "echo $host >> /etc/hostname"
-echo $host >> /etc/hostname
-#hostnamectl
-sleep 1
-
-echo '# The following lines are desirable for IPv4 capable hosts
-127.0.0.1       localhost
-127.0.1.1       localhost.domain   asura
-# The following lines are desirable for IPv6 capable hosts
-::1             localhost ip6-localhost ip6-loopback
-ff02::1         ip6-allnodes
-ff02::2         ip6-allrouters' >> /etc/hosts
-
-echo "Done"
-sleep 1
-echo '##################################################################'
-echo 'Compile kernel mkinitcpio'
-echo '##################################################################'
-
-#sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
-sleep 1
-#mkinitcpio -p linux-zen
-echo "mkinitcpio -p linux-lts"
-mkinitcpio -p linux-lts
-echo "mkinitcpio -p linux"
-mkinitcpio -p linux
-echo "Done"
-sleep 1
-
-echo '##################################################################'
 echo "Installing Packages"
 echo '##################################################################'
 sleep 1
 func_install() {
 	if pacman -Qi $1 &> /dev/null; then
-		tput setaf 2
+	tput setaf 2
   		echo "###############################################################################"
   		echo "################## The package "$1" is already installed"
-      	echo "###############################################################################"
-      	echo
-		tput sgr0
+      		echo "###############################################################################"
+      	tput sgr0
 	else
     	tput setaf 3
-    	echo "###############################################################################"
-    	echo "##################  Installing package "  $1
-    	echo "###############################################################################"
-    	echo
+    		echo "###############################################################################"
+    		echo "##################  Installing package "  $1
+    		echo "###############################################################################"
     	tput sgr0
     	pacman -S --noconfirm --needed $1
     fi
@@ -174,6 +136,43 @@ echo "Done"
 sleep 1
 
 echo '##################################################################'
+echo 'Set Hosts'
+echo '##################################################################'
+sleep 1
+
+#hostnamectl set-hostname $host
+#sleep 1
+echo "echo $host >> /etc/hostname"
+echo $host >> /etc/hostname
+#hostnamectl
+sleep 1
+
+echo '# The following lines are desirable for IPv4 capable hosts
+127.0.0.1       localhost
+127.0.1.1       localhost.domain   asura
+# The following lines are desirable for IPv6 capable hosts
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters' >> /etc/hosts
+
+echo "Done"
+sleep 1
+echo '##################################################################'
+echo 'Compile kernel mkinitcpio'
+echo '##################################################################'
+
+#sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
+sleep 1
+#mkinitcpio -p linux-zen
+echo "mkinitcpio -p linux-lts"
+mkinitcpio -p linux-lts
+echo "mkinitcpio -p linux"
+mkinitcpio -p linux
+echo "Done"
+sleep 1
+
+
+echo '##################################################################'
 echo 'Set root password'
 echo '##################################################################'
 sleep 1
@@ -210,7 +209,7 @@ echo 'Create bootloader'
 echo '##################################################################'
 sleep 1
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=ArchLinux
 sleep 1
 
 echo '##################################################################'
