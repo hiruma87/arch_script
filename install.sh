@@ -19,7 +19,7 @@ sleep 1
 echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 echo -e "\nPerforming Pacstrap Operation...\n"
-pacman -S archlinux-keyring --noconfirm
+#pacman -S archlinux-keyring --noconfirm
 sleep 1
 func_install() {
    if pacstrap /mnt -Qi $1 &> /dev/null; then
@@ -52,7 +52,6 @@ base
 linux-lts
 linux
 linux-firmware
-linux-lts-firmware
 vim
 bash-completion
 git
