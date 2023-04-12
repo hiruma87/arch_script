@@ -39,9 +39,9 @@ umount /mnt
 sleep 3
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{efi,home}
+mkdir -p /mnt/{boot/efi,home}
 sleep 1
-mount /dev/sda1 /mnt/efi
+mount /dev/sda1 /mnt/boot/efi
 sleep 1
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
 lsblk
