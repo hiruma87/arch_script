@@ -55,6 +55,7 @@ linux-firmware
 vim
 bash-completion
 git
+sudo
 #linux-firmware-marvell
 #linux-firmware-qlogic
 #linux-firmware-whence
