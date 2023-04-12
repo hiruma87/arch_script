@@ -33,5 +33,3 @@ sleep 1
 echo '#    Path                  Mode UID  GID  Age Argument
 w    /proc/acpi/wakeup     -    -    -    -   USBE' >> /etc/tmpfiles.d/disable-usb-wake.conf
 sleep 1
-
-echo 'blacklist pcspkr' >> /etc/modprobe.d/nobeep.conf
