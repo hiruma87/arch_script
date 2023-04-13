@@ -57,7 +57,9 @@ sleep 1
 echo "Done"
 sleep 1
 echo "hwclock --systohc"
-hwclock --systohc
+hwclock --systohc --GMT+8
+sleep 1
+date
 sleep 1
 echo "Done"
 sleep 1
@@ -147,13 +149,9 @@ echo $host >> /etc/hostname
 #hostnamectl
 sleep 1
 
-echo '# The following lines are desirable for IPv4 capable hosts
-127.0.0.1       localhost
-127.0.1.1       localhost.domain   asura
-# The following lines are desirable for IPv6 capable hosts
+echo '127.0.0.1       localhost
 ::1             localhost ip6-localhost ip6-loopback
-ff02::1         ip6-allnodes
-ff02::2         ip6-allrouters' >> /etc/hosts
+127.0.1.1       asura' >> /etc/hosts
 
 echo "Done"
 sleep 1
@@ -164,8 +162,8 @@ echo '##################################################################'
 #sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
 sleep 1
 #mkinitcpio -p linux-zen
-echo "mkinitcpio -p linux-lts"
-mkinitcpio -p linux-lts
+#echo "mkinitcpio -p linux-lts"
+#mkinitcpio -p linux-lts
 echo "mkinitcpio -p linux"
 mkinitcpio -p linux
 echo "Done"
@@ -209,7 +207,7 @@ echo 'Create bootloader'
 echo '##################################################################'
 sleep 1
 
-grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=ArchLinux
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArchLinux --removable
 sleep 1
 
 echo '##################################################################'
@@ -225,7 +223,7 @@ echo 'Create boot config'
 echo '##################################################################'
 sleep 1
 
-grub-mkconfig -o /efi/grub/grub.cfg
+grub-mkconfig -o /boot/efi/grub/grub.cfg
 sleep 1
 
 echo '##################################################################'
