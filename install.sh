@@ -49,7 +49,7 @@ echo
 i=(
 base
 #linux-zen
-linux-lts
+#linux-lts
 linux
 linux-firmware
 vim
@@ -78,7 +78,7 @@ sleep 1
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nGenerating FSTab...\n"
 echo
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U -p /mnt >> /mnt/etc/fstab
 sleep 1
 cat /mnt/etc/fstab
 sleep 1
