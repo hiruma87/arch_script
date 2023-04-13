@@ -35,15 +35,28 @@ sleep 1
 #sleep 3
 btrfs sub cr /mnt/@home
 sleep 1
+btrfs sub cr /mnt/@swap
+sleep 1
+btrfs sub cr /mnt/@snapshot
+sleep 1
+btrfs sub cr /mnt/@var
+sleep 1
 umount /mnt
-sleep 3
+sleep 1
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{boot/efi,home}
+mkdir -p /mnt/{boot/efi,home,.swap,.snapshot,var}
 sleep 1
 mount /dev/sda1 /mnt/boot/efi
 sleep 1
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
+sleep 1
+mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@swap /dev/sda2 /mnt/.swap
+sleep 1
+ount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@snapshot /dev/sda2 /mnt/.snapshot
+sleep 1
+ount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@var /dev/sda2 /mnt/var
+sleep 1
 lsblk
 sleep 1
 echo -e "\nDone.\n\n"
