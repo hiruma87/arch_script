@@ -1,23 +1,23 @@
 
-sudo echo 'fastestmirror=true
+echo 'fastestmirror=true
 deltarpm=true
 max_parallel_downloads=5
-defaultyes=true' >> sudo nano /etc/dnf/dnf.conf
+defaultyes=true' >> /etc/dnf/dnf.conf
 sleep 1
 
-sudo dnf update -y
+dnf update -y
 sleep 1
 
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sleep 1
 
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sleep 1
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sleep 1
 
-sudo dnf install akmod-nvidia neofetch git vim udiskie -y
+dnf install akmod-nvidia neofetch git vim udiskie -y
 sleep 1
 
 echo '# UDISKS_FILESYSTEM_SHARED
