@@ -31,7 +31,7 @@ xarchiver
 unzip
 unrar
 smplayer
-flatpak
+#flatpak
 neofetch
 galculator
 )
