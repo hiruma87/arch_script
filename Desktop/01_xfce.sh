@@ -72,13 +72,13 @@ echo;tput sgr0
 sh 08_browser.sh
 echo "Done"
 
-tput setaf 5;
-echo "################################################################"
-echo "Installing Printer Driver"
-echo "################################################################"
-echo;tput sgr0
-sh 09_printer.sh
-echo "Done"
+#tput setaf 5;
+##echo "################################################################"
+#echo "Installing Printer Driver"
+#echo "################################################################"
+#echo;tput sgr0
+#sh 09_printer.sh
+#echo "Done"
 
 tput setaf 5;
 echo "################################################################"
@@ -130,10 +130,10 @@ echo "################################################################"
 echo;tput sgr0
 
 sudo systemctl enable lightdm.service
-sudo systemctl enable cups.service
+#sudo systemctl enable cups.service
 sudo systemctl enable bluetooth.service
-sudo systemctl start bluetooth.service
-sudo systemctl start ipp-usb.service
+#sudo systemctl start bluetooth.service
+#sudo systemctl start ipp-usb.service
 sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
 
 tput setaf 11;
