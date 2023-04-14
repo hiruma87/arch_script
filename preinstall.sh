@@ -223,7 +223,7 @@ echo 'Create boot config'
 echo '##################################################################'
 sleep 1
 
-grub-mkconfig -o /boot/efi/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
 sleep 1
 
 echo '##################################################################'
