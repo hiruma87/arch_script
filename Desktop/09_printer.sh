@@ -27,7 +27,7 @@ cups
 gutenprint
 sane
 xsane
-ipp-usb
+#ipp-usb
 )
 
 for name in "${list[@]}" ; do
