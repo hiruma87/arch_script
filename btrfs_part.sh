@@ -51,9 +51,9 @@ mount /dev/sda1 /mnt/boot/efi
 sleep 1
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@swap /dev/sda2 /mnt/.swap
+mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@.swap /dev/sda2 /mnt/.swap
 sleep 1
-ount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@snapshot /dev/sda2 /mnt/.snapshot
+ount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@.snapshot /dev/sda2 /mnt/.snapshot
 sleep 1
 ount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@var /dev/sda2 /mnt/var
 sleep 1
