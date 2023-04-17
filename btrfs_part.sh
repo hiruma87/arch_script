@@ -35,9 +35,9 @@ sleep 1
 #sleep 3
 btrfs sub cr /mnt/@home
 sleep 1
-btrfs sub cr /mnt/@swap
+btrfs sub cr /mnt/@.swap
 sleep 1
-btrfs sub cr /mnt/@snapshot
+btrfs sub cr /mnt/@.snapshot
 sleep 1
 btrfs sub cr /mnt/@var
 sleep 1
