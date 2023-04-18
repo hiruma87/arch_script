@@ -71,3 +71,7 @@ for name in "${list[@]}" ; do
 	sleep 5
 	func_install $name
 done
+
+sudo systemctl enable gdm.service
+sudo systemctl enable bluetooth.service
+sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
