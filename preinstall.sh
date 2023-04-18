@@ -57,7 +57,7 @@ sleep 1
 echo "Done"
 sleep 1
 echo "hwclock --systohc"
-hwclock --systohc --GMT+8
+hwclock --systohc
 sleep 1
 date
 sleep 1
@@ -73,8 +73,6 @@ sed -i 's #en_US.UTF-8 en_US.UTF-8 ' /etc/locale.gen
 sleep 1
 echo "locale-gen"
 locale-gen
-sleep 1
-echo "Done"
 sleep 1
 echo "Done"
 sleep 1
