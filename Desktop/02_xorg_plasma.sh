@@ -25,12 +25,11 @@ list=(
 #org-sercer and desktop
 xorg-server
 sddm
-plasma
-packagekit-qt5
+plasma-meta
 dolphin
+dolphin-plugin
 kwrite
 kcalc
-kvantum
 bluedevil
 )
 
