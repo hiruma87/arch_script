@@ -45,10 +45,8 @@ PKGS=(
     # UTILITIES -----------------------------------------------------------
 
     #'timeshift'                 # Backup and Restore
-    #'aic94xx-firmware'
-    #'wd719x-firmware'
-    #'upd72020x-fw'
-    #'linux-firmware-qlogic'
+    'snapper-support'
+    'btrfs-assistant'
     'jmtpfs'
     #'zramd'
     'gksu'
