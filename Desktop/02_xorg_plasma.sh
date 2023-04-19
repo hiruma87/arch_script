@@ -43,3 +43,14 @@ for name in "${list[@]}" ; do
 done
 
 ###############################################################################
+
+
+cd "${HOME}"
+cd git
+echo "CLONING: YAY"
+git clone "https://aur.archlinux.org/yay.git"
+cd yay
+makepkg -si --noconfirm
+sleep 3
+
+
