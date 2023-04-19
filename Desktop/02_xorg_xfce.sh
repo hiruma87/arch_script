@@ -88,13 +88,22 @@ for name in "${list[@]}" ; do
 	echo "################################################################"
 	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
 	echo "################################################################"
-	sleep 5
+	sleep 1
 	func_install $name
 done
 
 sudo systemctl enable lightdm.service
 sudo systemctl enable bluetooth.service
 sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
+sleep 1
+
+cd "${HOME}"
+cd git
+echo "CLONING: YAY"
+git clone "https://aur.archlinux.org/yay.git"
+cd yay
+makepkg -si --noconfirm
+sleep 1
 
 tput setaf 11;
 echo "################################################################"
