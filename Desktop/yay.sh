@@ -44,7 +44,7 @@ PKGS=(
 
     # UTILITIES -----------------------------------------------------------
 
-    'timeshift'                 # Backup and Restore
+    #'timeshift'                 # Backup and Restore
     #'aic94xx-firmware'
     #'wd719x-firmware'
     #'upd72020x-fw'
@@ -97,8 +97,8 @@ for PKG in "${PKGS[@]}"; do
     sleep 3
 done
     sleep 3
-sudo systemctl enable cronie.service
-sudo systemctl enable --now zramd.service
+#sudo systemctl enable cronie.service
+#sudo systemctl enable --now zramd.service
 echo
 echo "Done!"
 echo
