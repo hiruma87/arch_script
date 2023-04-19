@@ -12,15 +12,6 @@ echo "INSTALLING AUR SOFTWARE"
 echo
 
 
-cd "${HOME}"
-cd git
-echo "CLONING: YAY"
-git clone "https://aur.archlinux.org/yay.git"
-cd yay
-makepkg -si --noconfirm
-sleep 3
-
-
 func_install() {
 	if pacman -Qi $1 &> /dev/null; then
 		tput setaf 2
