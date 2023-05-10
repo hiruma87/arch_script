@@ -5,9 +5,6 @@ max_parallel_downloads=5
 defaultyes=true' >> /etc/dnf/dnf.conf
 sleep 1
 
-dnf update -y
-sleep 1
-
 dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sleep 1
 
@@ -15,6 +12,9 @@ dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-rel
 sleep 1
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sleep 1
+
+dnf update -y
 sleep 1
 
 dnf install akmod-nvidia neofetch git vim udiskie -y
