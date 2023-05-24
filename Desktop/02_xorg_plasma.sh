@@ -45,6 +45,9 @@ xsane
 bluez
 bluez-libs
 bluez-utils
+pipewire
+pipewire-pulse
+lib32-pipewire
 )
 
 for name in "${list[@]}" ; do
