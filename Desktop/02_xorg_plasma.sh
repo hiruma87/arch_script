@@ -48,6 +48,7 @@ bluez-utils
 pipewire
 pipewire-pulse
 lib32-pipewire
+udiskie
 )
 
 for name in "${list[@]}" ; do
@@ -55,19 +56,21 @@ for name in "${list[@]}" ; do
 	echo "################################################################"
 	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
 	echo "################################################################"
-	sleep 5
+	sleep 1
 	func_install $name
 done
 
-###############################################################################
-
-
+##############################################################################
 cd "${HOME}"
 cd git
 echo "CLONING: YAY"
 git clone "https://aur.archlinux.org/yay.git"
 cd yay
 makepkg -si --noconfirm
-sleep 3
+sleep 1
+
+sudo systemctl enable bluetooth
+sudo systemctl enable cups
+sydo systemctl enable sddm
 
 
