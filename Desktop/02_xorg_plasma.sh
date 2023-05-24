@@ -25,12 +25,21 @@ list=(
 #org-sercer and desktop
 xorg-server
 sddm
-plasma-meta
+plasma
 dolphin
 dolphin-plugin
 kwrite
 kcalc
 bluedevil
+konsole
+ark
+gwenview
+kbackup
+kcalc
+kclock
+ktorrent
+okular
+cups
 )
 
 for name in "${list[@]}" ; do
