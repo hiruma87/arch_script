@@ -69,6 +69,9 @@ cd yay
 makepkg -si --noconfirm
 sleep 1
 
+sudo sh udiskie.sh
+sh yay.sh
+
 sudo systemctl enable bluetooth
 sudo systemctl enable cups
 sydo systemctl enable sddm
