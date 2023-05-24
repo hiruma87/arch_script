@@ -40,8 +40,8 @@ PKGS=(
     'btrfs-assistant'
     'jmtpfs'
     #'zramd'
-    'gksu'
-    'hid-sony-panic-fix-dkms'
+    #'gksu'
+    #'hid-sony-panic-fix-dkms'
     #'android-file-transfer-linux-git'
     
     # COMMUNICATIONS ------------------------------------------------------
