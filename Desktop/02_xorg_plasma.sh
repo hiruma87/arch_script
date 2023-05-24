@@ -42,6 +42,9 @@ okular
 cups
 gutenprint
 xsane
+bluez
+bluez-libs
+bluez-utils
 )
 
 for name in "${list[@]}" ; do
