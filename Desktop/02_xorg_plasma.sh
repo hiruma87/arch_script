@@ -40,6 +40,8 @@ kclock
 ktorrent
 okular
 cups
+gutenprint
+xsane
 )
 
 for name in "${list[@]}" ; do
