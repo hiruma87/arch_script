@@ -11,6 +11,13 @@ echo
 echo "INSTALLING AUR SOFTWARE"
 echo
 
+cd "${HOME}"
+mkdir git
+cd git
+echo "CLONING: YAY"
+git clone "https://aur.archlinux.org/yay.git"
+cd yay
+makepkg -si --noconfirm
 
 func_install() {
 	if pacman -Qi $1 &> /dev/null; then
@@ -33,50 +40,42 @@ func_install() {
 
 PKGS=(
 
-    # UTILITIES -----------------------------------------------------------
-
-    #'timeshift'                 # Backup and Restore
-    'snapper-support'
-    'btrfs-assistant'
     'jmtpfs'
-    #'zramd'
-    #'gksu'
-    #'hid-sony-panic-fix-dkms'
-    #'android-file-transfer-linux-git'
-    
-    # COMMUNICATIONS ------------------------------------------------------
-
+    'mesa'
+    'lib32-mesa'
+    'vulkan-radeon'
+    'lib32-vulkan-radeon'
+    'keepassxc'
+    'smplayer'
+    'mtools'
+    'wpa_supplicant'
+    'gvfs'
+    'gvfs-mtp'
+    'dosfstools'
+    'mtools'
+    'vim'
+    'git'
+    'cmake'
+    'python-pip'
+    'wine-staging'
+    'wine-mono'
+    'wine-gecko'
+    'xf86-video-amdgpu'
+    'noto-fonts-emoji'
+    'bash-completion'
     'whatsie'
     'moderndeck-bin'
-    #'appimaglauncher'
-
-    # THEMES --------------------------------------------------------------
-
-
-    # APPS ----------------------------------------------------------------
-
-    #'yuzu-mainline-bin'
     'microsoft-edge-stable-bin'
-    #'lutris-git'
-    #'ryujinx-git'
-    #'pamac-all'
-    #'twitch-bin'
-    #'facebook-nativefier'
-    
-    # FONTS----------------------------------------------------------------
-    # Japanese
-    'adobe-source-han-sans-jp-fonts'
-    #'adobe-source-han-serif-jp-fonts'
-    #'otf-ipafont'
-    'ttf-hanazono'
-    #'ttf-sazanami'
-    #'ttf-koruri'
-    #'ttf-monapo'
-    #'ttf-mplus'
-    #'ttf-vlgothic'
+    'adobe-source-han-serif-jp-fonts'
+    'adobe-source-han-serif-kr-fonts'
+    'adobe-source-han-serif-cn-fonts'
+    'adobe-source-han-serif-tw-fonts'
+    'btrfs-assistant'
+    'snapper-support'
+    'grub-btrfs'
+
 )
 
-coubt = 0
 for PKG in "${PKGS[@]}"; do
 	count=$[count+1]
 	echo "################################################################"
@@ -91,4 +90,3 @@ done
 echo
 echo "Done!"
 echo
-
