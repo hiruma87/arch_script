@@ -64,7 +64,7 @@ PKGS=(
     'noto-fonts-emoji'
     'bash-completion'
     'whatsie'
-    'moderndeck-bin'
+    'atomic-tweetdeck'
     'microsoft-edge-stable-bin'
     'adobe-source-han-serif-jp-fonts'
     'adobe-source-han-serif-kr-fonts'
