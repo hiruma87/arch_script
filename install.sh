@@ -59,7 +59,7 @@ linux-firmware
 vim
 bash-completion
 git
-sudo
+#sudo
 #linux-firmware-marvell
 #linux-firmware-qlogic
 #linux-firmware-whence
@@ -88,6 +88,6 @@ cat /mnt/etc/fstab
 sleep 1
 echo -e "\nDone.\n\nBase installation is now complete.\n\n"
 sleep 1
-curl https://raw.githubusercontent.com/hiruma87/arch_script/main/preinstall.sh -o preinstall.sh
-cp -rf preinstall.sh /mnt
-arch-chroot /mnt
+curl https://raw.githubusercontent.com/hiruma87/arch_script/main/preinstall.sh -o /mnt/preinstall.sh
+#cp -rf preinstall.sh /mnt
+arch-chroot /mnt /bin/bash
