@@ -99,7 +99,16 @@ for PKG in "${PKGS[@]}"; do
 	func_install $PKG
     sleep 3
 done
-    sleep 3
+
+cd "${HOME}"
+mkdir .git
+cd .git
+echo "CLONING: Synth-shell"
+git clone --recursive https://github.com/andresgongora/synth-shell.git
+cd synth-shell
+./setup.sh
+sleep 3
+
 sudo systemctl enable cups
 sudo systemctl enable bluetooth
 sudo systemctl enable upower
