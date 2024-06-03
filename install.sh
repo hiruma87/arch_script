@@ -55,7 +55,7 @@ base
 #linux-zen
 #linux-lts
 linux
-linux-firmware
+#linux-firmware
 vim
 bash-completion
 git
