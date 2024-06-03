@@ -223,7 +223,7 @@ sleep 1
 
 grub-mkconfig -o /boot/grub/grub.cfg
 sleep 1
-grub-mkconfig -o /boot/grub/efi/grub.cfg
+#grub-mkconfig -o /boot/grub/efi/grub.cfg
 sleep 1
 
 echo '##################################################################'
