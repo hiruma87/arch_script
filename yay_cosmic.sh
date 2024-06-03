@@ -41,7 +41,7 @@ func_install() {
 PKGS=(
     'inotify-tools'
     'bash-completion'
-    'firefox'
+    #'firefox'
     'opera'
     'opera-ffmpeg-codecs'
     'smplayer'
