@@ -39,7 +39,6 @@ func_install() {
 }
 
 PKGS=(
-    'inotify-tools'
     'bash-completion'
     #'firefox'
     'opera'
@@ -65,6 +64,7 @@ PKGS=(
     'cosmic-settings-git'
     'cosmic-term-git'
     'cosmic-edit-git'
+    'inotify-tools'
     'btrfs-assistant'
     'snapper-support'
     'grub-btrfs'
