@@ -39,6 +39,8 @@ func_install() {
 }
 
 PKGS=(
+    'xorg-server'
+    'xorg-xwayland'
     'bash-completion'
     'firefox'
     'microsoft-edge-stable-bin'
