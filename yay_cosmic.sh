@@ -40,30 +40,33 @@ func_install() {
 
 PKGS=(
     'bash-completion'
-    #'firefox'
-    'opera'
-    'opera-ffmpeg-codecs'
+    'firefox'
+    'microsoft-edge-stable-bin'
     'smplayer'
     'cups'
     'cups-pdf'
-    'capt-src'
+    'gutenprint'
+    'foomatic-db-gutenprint-ppds'
     'keepassxc'
     'ttf-ubuntu-font-family'
-    'otf-ipafonts'
+    'otf-ipafont'
     'noto-fonts'
     'noto-fonts-emoji'
+    'ttf-mplus-git'
     'flatpak'
     'git'
-    'cosmic-epoch-git'
-    'pop-icon-thme-git'
-    'pop-launcher-git'
-    'cosmic-comp-git'
-    'cosmic-applets-git'
-    'cosmic-applibrary-git'
-    'cosmic-bg-git'
-    'cosmic-settings-git'
-    'cosmic-term-git'
-    'cosmic-edit-git'
+    'pipewire'
+    'pipewire-alsa'
+    'pipewire-jack'
+    'pipewire-pulse'
+    'gst-plugin-pipewire'
+    'libpulse'
+    'wireplumber'
+    'plasma'
+    'bluez'
+    'bluez-utils'
+    'printer-manager'
+    'system-config-printer'
     'inotify-tools'
     'btrfs-assistant'
     'snapper-support'
@@ -91,7 +94,7 @@ sleep 3
 
 sudo systemctl enable cups
 sudo systemctl enable bluetooth
-sudo systemctl enable upower
+sudo aystemctl enable sddm
 sudo systemctl mask systemd-rfkill.socket
 sudo systemctl mask systemd-rfkill.service
 echo
