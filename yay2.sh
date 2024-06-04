@@ -95,6 +95,7 @@ sleep 3
 sudo systemctl enable cups
 sudo systemctl enable bluetooth
 sudo aystemctl enable sddm
+sudo systemctl enable --user pipewire-pulse.service
 sudo systemctl mask systemd-rfkill.socket
 sudo systemctl mask systemd-rfkill.service
 echo
