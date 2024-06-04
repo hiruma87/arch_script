@@ -37,17 +37,18 @@ btrfs sub cr /mnt/@home
 sleep 1
 btrfs sub cr /mnt/@.swap
 sleep 1
-#btrfs sub cr /mnt/@.snapshot
-#sleep 1
+btrfs sub cr /mnt/@.snapshots
+sleep 1
 btrfs sub cr /mnt/@cache
 sleep 1
 btrfs sub cr /mnt/@log
 sleep 1
+btrfs sub cr /mnt/@.home_snap
 umount /mnt
 sleep 1
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{boot/efi,home,.swap,.snapshot}
+mkdir -p /mnt/{boot/efi,home/.snapshots,.swap,.snapshots}
 #mkdir -p /mnt/{boot/efi,home,.swap}
 sleep 1
 mkdir -p /mnt/var/{log,cache}
@@ -58,11 +59,13 @@ mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@home /de
 sleep 1
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@.swap /dev/sda2 /mnt/.swap
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@.snapshot /dev/sda2 /mnt/.snapshot
+mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@.snapshots /dev/sda2 /mnt/.snapshots
 sleep 1
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@log /dev/sda2 /mnt/var/log
 sleep 1
 mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@cache /dev/sda2 /mnt/var/cache
+sleep 1
+mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@.home_snap /dev/sda2 /mnt/home/.snapshots
 sleep 1
 lsblk
 sleep 1
