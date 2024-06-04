@@ -9,7 +9,7 @@ Before installation, you should install DKMS support. Depending on which Linux d
 Next, clone the source code.
 
     git clone https://github.com/hiruma87/hid-sony-fix
-    cd hid-nx-dkms
+    cd hid-sony-dkms
 
 Then run the following commands as root or using `sudo`.
 
