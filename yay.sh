@@ -39,6 +39,19 @@ func_install() {
 }
 
 PKGS=(
+    'cinnamon'
+    'system-config-printer'
+    'gnome-keyring'
+    'gnome-terminal'
+    'blueberry'
+    'metacity'
+    'pipewire'
+    'pipewire-alsa'
+    'pipewire-jack'
+    'pipewire-pulse'
+    'gst-plugin-pipewire'
+    'libpulse'
+    'wireplumber'
     'inotify-tools'
     'bash-completion'
     'firefox'
