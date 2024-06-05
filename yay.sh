@@ -45,6 +45,7 @@ PKGS=(
     'gnome-terminal'
     'blueberry'
     'metacity'
+    'lightdm'
     'pipewire'
     'pipewire-alsa'
     'pipewire-jack'
@@ -59,11 +60,14 @@ PKGS=(
     'smplayer'
     'cups'
     'cups-pdf'
+    'gutenprint'
+    'print-manager'
     'keepassxc'
     'ttf-ubuntu-font-family'
-    'otf-ipafonts'
+    'otf-ipafont'
     'noto-fonts'
     'noto-fonts-emoji'
+    'ttf-mplus-git'
     'flatpak'
     'git'
     'mint-themes'
@@ -85,7 +89,6 @@ PKGS=(
     'gucharmap'
     'gnome-calculator'
     'simple-scan'
-    'pix'
     'drawing'
     'webapp-manager'
     'thunderbird'
@@ -94,14 +97,14 @@ PKGS=(
     'libreoffice-fresh'
     'python'
     'python-pipx'
-    'rythmbox'
-    'baobap'
+    'rhythmbox'
+    'baobab'
     'gnome-logs'
     'gufw'
+    'plank'
     'btrfs-assistant'
     'snapper-support'
     'grub-btrfs'
-
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -124,7 +127,9 @@ sleep 3
 
 sudo systemctl enable cups
 sudo systemctl enable bluetooth
-sudo systemctl enable upower
+sudo systemctl enable lightdm.service
+sudo systemctl enable reflector.service
+sudo systemctl enable reflector.timer
 sudo systemctl mask systemd-rfkill.socket
 sudo systemctl mask systemd-rfkill.service
 echo
