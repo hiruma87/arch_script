@@ -120,6 +120,7 @@ networkmanager
 ntfs-3g
 gvfs
 gvfs-mtp
+reflector
 )
 
 for pkg in "${i[@]}" ; do
