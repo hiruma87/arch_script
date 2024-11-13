@@ -121,6 +121,9 @@ gvfs
 gvfs-mtp
 reflector
 git
+snapper
+make
+inotify-tools
 mesa
 lib32-mesa
 vulkan-radeon
