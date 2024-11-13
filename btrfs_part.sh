@@ -68,7 +68,7 @@ btrfs su cr /mnt/@var/@tmp
 sleep 1
 umount /mnt
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
+mount -o noatime,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
 sleep 1
 mkdir -p /mnt/{boot/efi,home/.snapshots,.swap,.snapshots,root,tmp,opt}
 #mkdir -p /mnt/{boot/efi,home,.swap}
@@ -77,37 +77,37 @@ mkdir -p /mnt/var/{log,cache,crash,tmp,spool,lib/{AccountsService,lightdm,lightd
 sleep 3
 mount /dev/sda1 /mnt/boot/efi
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
+mount -o noatime,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@root /dev/sda2 /mnt/root
+mount -o noatime,,compress=zstd,discard=async,subvol=@root /dev/sda2 /mnt/root
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@tmp /dev/sda2 /mnt/tmp
+mount -o noatime,compress=zstd,discard=async,subvol=@tmp /dev/sda2 /mnt/tmp
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@opt /dev/sda2 /mnt/opt
+mount -o noatime,compress=zstd,discard=async,subvol=@opt /dev/sda2 /mnt/opt
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@.swap /dev/sda2 /mnt/.swap
+mount -o noatime,compress=zstd,discard=async,subvol=@.swap /dev/sda2 /mnt/.swap
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@.snapshots /dev/sda2 /mnt/.snapshots
+mount -o noatime,compress=zstd,discard=async,subvol=@.snapshots /dev/sda2 /mnt/.snapshots
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@log /dev/sda2 /mnt/var/log
+mount -o noatime,compress=zstd,discard=async,subvol=@log /dev/sda2 /mnt/var/log
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@cache /dev/sda2 /mnt/var/cache
+mount -o noatime,compress=zstd,discard=async,subvol=@cache /dev/sda2 /mnt/var/cache
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@crash /dev/sda2 /mnt/var/crash
+mount -o noatime,compress=zstd,discard=async,subvol=@crash /dev/sda2 /mnt/var/crash
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@spool /dev/sda2 /mnt/var/spool
+mount -o noatime,compress=zstd,discard=async,subvol=@spool /dev/sda2 /mnt/var/spool
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@var/@tmp /dev/sda2 /mnt/var/tmp
+mount -o noatime,compress=zstd,discard=async,subvol=@var/@tmp /dev/sda2 /mnt/var/tmp
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@home/@.snapshots /dev/sda2 /mnt/home/.snapshots
+mount -o noatime,compress=zstd,discard=async,subvol=@home/@.snapshots /dev/sda2 /mnt/home/.snapshots
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@AccountsService /dev/sda2 /mnt/var/lib/AccountsService
+mount -o noatime,compress=zstd,discard=async,subvol=@AccountsService /dev/sda2 /mnt/var/lib/AccountsService
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@lightdm /dev/sda2 /mnt/var/lib/lightdm
+mount -o noatime,compress=zstd,discard=async,subvol=@lightdm /dev/sda2 /mnt/var/lib/lightdm
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@lightdm-data /dev/sda2 /mnt/var/lib/lightdm-data
+mount -o noatime,compress=zstd,discard=async,subvol=@lightdm-data /dev/sda2 /mnt/var/lib/lightdm-data
 sleep 1
-mount -o noatime,space_cache=v2,ssd,compress=zstd,discard=async,subvol=@images /dev/sda2 /mnt/var/lib/libvirt/images
+mount -o noatime,compress=zstd,discard=async,subvol=@images /dev/sda2 /mnt/var/lib/libvirt/images
 sleep 1
 lsblk
 sleep 1
