@@ -81,7 +81,7 @@ mount /dev/md127 /mnt/media/raid0
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
 sleep 1
-mount -o noatime,,compress=zstd,discard=async,subvol=@root /dev/sda2 /mnt/root
+mount -o noatime,compress=zstd,discard=async,subvol=@root /dev/sda2 /mnt/root
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@tmp /dev/sda2 /mnt/tmp
 sleep 1
