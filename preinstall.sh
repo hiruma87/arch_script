@@ -121,6 +121,13 @@ gvfs
 gvfs-mtp
 reflector
 git
+mesa
+lib32-mesa
+vulkan-radeon
+lib32-vulkan-radeon
+libva-mesa-driver
+lib32-libva-mesa-driver
+libva-utils
 )
 
 for pkg in "${i[@]}" ; do
