@@ -52,13 +52,13 @@ echo
 
 i=(
 base
+base-devel
 #linux-zen
 #linux-lts
 linux
 #linux-firmware
-vim
+neovim
 bash-completion
-git
 #sudo
 #linux-firmware-marvell
 #linux-firmware-qlogic
