@@ -103,7 +103,6 @@ func_install() {
 }
 
 i=(
-base-devel
 intel-ucode
 #linux-zen-headers
 #linux-lts-headers
@@ -121,6 +120,7 @@ ntfs-3g
 gvfs
 gvfs-mtp
 reflector
+git
 )
 
 for pkg in "${i[@]}" ; do
