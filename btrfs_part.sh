@@ -70,12 +70,14 @@ umount /mnt
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{boot/efi,home/.snapshots,.swap,.snapshots,root,tmp,opt}
+mkdir -p /mnt/{boot/efi,home/.snapshots,.swap,.snapshots,root,tmp,opt,media/raid0}
 #mkdir -p /mnt/{boot/efi,home,.swap}
 sleep 3
 mkdir -p /mnt/var/{log,cache,crash,tmp,spool,lib/{AccountsService,lightdm,lightdm-data,libvirt/images}}
 sleep 3
 mount /dev/sda1 /mnt/boot/efi
+sleep 1
+mount /dev/md127 /mnt/media/raid0
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
 sleep 1
