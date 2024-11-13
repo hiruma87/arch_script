@@ -39,72 +39,62 @@ func_install() {
 }
 
 PKGS=(
-    'cinnamon'
-    'system-config-printer'
-    'gnome-keyring'
-    'gnome-terminal'
-    'blueberry'
-    'metacity'
+    #basic cinnamon desktop
+    'xorg-server'
     'lightdm'
-    'pipewire'
-    'pipewire-alsa'
-    'pipewire-jack'
-    'pipewire-pulse'
-    'gst-plugin-pipewire'
-    'libpulse'
-    'wireplumber'
-    'inotify-tools'
-    'bash-completion'
-    'opera'
-    'opera-ffmpeg-codecs '
-    'smplayer'
+    'lightdm-slick-greeter'
+    'cinnamon'
+    'gnome-terminal'
+    #utilities
     'cups'
     'cups-pdf'
-    'gutenprint'
-    'print-manager'
-    'keepassxc'
-    'ttf-ubuntu-font-family'
-    'otf-ipafont'
-    'noto-fonts'
-    'noto-fonts-emoji'
-    'ttf-mplus-git'
-    'flatpak'
-    'git'
-    'mint-themes'
-    'mint-y-icons'
-    'mint-x-icons'
-    'cinnamon-control-center'
-    'cinnamon-settings-daemon'
-    'cinnamon-translation'
-    'mint-locale'
+    'system-config-printer'
+    'gutenprint' #canon driver
+    'nemo'
     'file-roller'
+    'unzip'
+    'unrar'
+    'flatpak'
+    'grub-btrfs'
+    'btrfs-assistant'
+    'python-pipx'
+    #bluetooth
+    'bluez'
+    'bluez-utils'
+    'blueberry'
+    #audio
+    'pipewire'
+    'lib32-pipewire'
+    'wireplumber'
+    'pipewire-audio'
+    'pipewire-alsa'
+    'pipewire-jack'
+    'lib32-pipewire-jack'
+    'pipewire-pulse'
+    'pavucontrol'
+    # applications
     'mintstick'
     'xed'
     'gnome-screenshot'
+    'redshift'
     'onboard'
+    'sticky'
     'xviewer'
-    'gnome-font-viewer'
     'xreader'
     'gnome-disk-utility'
-    'gucharmap'
     'gnome-calculator'
     'simple-scan'
-    'drawing'
-    'webapp-manager'
-    'thunderbird'
+    'pix'
     'transmission-gtk'
     'gnome-calendar'
     'libreoffice-fresh'
-    'python'
-    'python-pipx'
     'rhythmbox'
+    'smplayer'
     'baobab'
-    'gnome-logs'
     'gufw'
-    'plank'
-    'btrfs-assistant'
-    'snapper-support'
-    'grub-btrfs'
+    'mintlocale'
+    'cinnamon-translations'
+    'gnome-keyring'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -113,17 +103,8 @@ for PKG in "${PKGS[@]}"; do
 	tput setaf 3;echo "Installing package nr.  "$count " " $PKG;tput sgr0;
 	echo "################################################################"
 	func_install $PKG
-    sleep 3
+    sleep 1
 done
-
-cd "${HOME}"
-mkdir .git
-cd .git
-echo "CLONING: Synth-shell"
-git clone --recursive https://github.com/andresgongora/synth-shell.git
-cd synth-shell
-./setup.sh
-sleep 3
 
 sudo systemctl enable cups
 sudo systemctl enable bluetooth
@@ -132,6 +113,7 @@ sudo systemctl enable reflector.service
 sudo systemctl enable reflector.timer
 sudo systemctl mask systemd-rfkill.socket
 sudo systemctl mask systemd-rfkill.service
+sudo systemctl enable upower
 echo
 echo "Done!"
 echo
