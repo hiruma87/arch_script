@@ -26,14 +26,14 @@ echo -e "\nPerforming Pacstrap Operation...\n"
 #pacman -S archlinux-keyring --noconfirm
 sleep 1
 func_install() {
-   if pacstrap /mnt -Qi $1 &> /dev/null; then
-	tput setaf 2
-  	echo "###############################################################################"
-  	echo "################## The package "$1" is already installed"
-      	echo "###############################################################################"
-      	echo
-	tput sgr0
-   else
+  # if pacstrap /mnt -Qi $1 &> /dev/null; then
+	#tput setaf 2
+  	#echo "###############################################################################"
+  	#echo "################## The package "$1" is already installed"
+      	#echo "###############################################################################"
+      	#echo
+	#tput sgr0
+  # else
     	tput setaf 3
     	echo "###############################################################################"
     	echo "##################  Installing package "  $1
@@ -41,7 +41,7 @@ func_install() {
     	echo
     	tput sgr0
     	pacstrap -K /mnt $1
-    fi
+    #fi
 }
 # edit and adjust the "pkgs" file for desired packages (don't worry about any extra white spaces or new lines or comments as they will be omitted using sed and tr)
 echo
