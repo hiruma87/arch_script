@@ -217,7 +217,8 @@ echo 'Enable OS_PROBER'
 echo '##################################################################'
 sleep 1
 
-echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
+#echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
+sed -i 's #GRUB_DISABLE_OS_PROBER=false GRUB_DISABLE_OS_PROBER=false' /etc/default/grub
 sleep 1
 
 echo '##################################################################'
