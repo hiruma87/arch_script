@@ -41,6 +41,9 @@ func_install() {
 PKGS=(
     #basic cinnamon desktop
     'xorg-server'
+    'egl-wayland'
+    'xorg-xinit'
+    'xorg-xwininfo'
     'lightdm'
     'lightdm-slick-greeter'
     'cinnamon'
@@ -58,19 +61,22 @@ PKGS=(
     'grub-btrfs'
     'btrfs-assistant'
     'python-pipx'
+    'wireless-tools'
+    'inotify-tools'
+    'jq'
     #bluetooth
     'bluez'
     'bluez-utils'
-    'blueberry'
+    'blueman'
+    'bluez-libs'
     #audio
     'pipewire'
-    'lib32-pipewire'
     'wireplumber'
-    'pipewire-audio'
     'pipewire-alsa'
     'pipewire-jack'
-    'lib32-pipewire-jack'
     'pipewire-pulse'
+    'libpulse'
+    'gst-plugin-pipewire'
     'pavucontrol'
     # applications
     'mintstick'
@@ -95,6 +101,8 @@ PKGS=(
     'mintlocale'
     'cinnamon-translations'
     'gnome-keyring'
+    'xdg-user-dirs-gtk'
+    ##'network-manager-applet'
     # themes
     'mint-themes'
     'mint-y-icons'
@@ -122,6 +130,7 @@ sudo systemctl enable bluetooth
 sudo systemctl enable lightdm.service
 sudo systemctl enable reflector.service
 sudo systemctl enable reflector.timer
+sudo systemctl enable --user pipewire-pulse.service
 sudo systemctl mask systemd-rfkill.socket
 sudo systemctl mask systemd-rfkill.service
 sudo systemctl enable upower
