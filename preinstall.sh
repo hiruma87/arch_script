@@ -103,34 +103,17 @@ func_install() {
 }
 
 i=(
+linux-api-headers
 intel-ucode
-#linux-zen-headers
-#linux-lts-headers
-linux-headers
+iwd
+networkmanager
+reflector
+sof-firmware
+linux-firmware-whence
+snapper
 grub
 efibootmgr
-os-prober
-mtools
-dosfstools
-networkmanager
-#wireless_tools
-#wpa_supplicant
-#dialog
-ntfs-3g
-gvfs
-gvfs-mtp
-reflector
 git
-snapper
-make
-inotify-tools
-mesa
-lib32-mesa
-vulkan-radeon
-lib32-vulkan-radeon
-libva-mesa-driver
-lib32-libva-mesa-driver
-libva-utils
 )
 
 for pkg in "${i[@]}" ; do
