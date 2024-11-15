@@ -43,7 +43,7 @@ btrfs sub cr /mnt/@cache
 sleep 1
 btrfs sub cr /mnt/@log
 sleep 1
-btrfs sub cr /mnt/@home/@.snapshots
+btrfs sub cr /mnt/@home/.snapshots
 sleep 1
 btrfs sub cr /mnt/@opt
 sleep 1
@@ -64,8 +64,6 @@ btrfs su cr /mnt/@spool
 sleep 1
 btrfs su cr /mnt/@root
 sleep 1
-btrfs su cr /mnt/@var/@tmp
-sleep 1
 umount /mnt
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
@@ -73,7 +71,7 @@ sleep 1
 mkdir -p /mnt/{boot/efi,home/.snapshots,.swap,.snapshots,root,tmp,opt,media/raid0}
 #mkdir -p /mnt/{boot/efi,home,.swap}
 sleep 3
-mkdir -p /mnt/var/{log,cache,crash,tmp,spool,lib/{AccountsService,lightdm,lightdm-data,libvirt/images}}
+mkdir -p /mnt/var/{log,cache,crash,spool,lib/{AccountsService,lightdm,lightdm-data,libvirt/images}}
 sleep 3
 mount /dev/sda1 /mnt/boot/efi
 sleep 1
@@ -99,9 +97,7 @@ mount -o noatime,compress=zstd,discard=async,subvol=@crash /dev/sda2 /mnt/var/cr
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@spool /dev/sda2 /mnt/var/spool
 sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@var/@tmp /dev/sda2 /mnt/var/tmp
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@home/@.snapshots /dev/sda2 /mnt/home/.snapshots
+mount -o noatime,compress=zstd,discard=async,subvol=@home/.snapshots /dev/sda2 /mnt/home/.snapshots
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@AccountsService /dev/sda2 /mnt/var/lib/AccountsService
 sleep 1
