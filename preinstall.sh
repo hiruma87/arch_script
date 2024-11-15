@@ -103,17 +103,27 @@ func_install() {
 }
 
 i=(
-linux-api-headers
+linux-headers
 intel-ucode
 iwd
 networkmanager
 reflector
 sof-firmware
 linux-firmware-whence
+linux-firmware
 snapper
 grub
 efibootmgr
 git
+mesa
+lib32-mesa
+vulkan-radeon
+lib32-vulkan-radeon
+libva
+lib32-libva
+libva-utils
+os-prober
+neovim
 )
 
 for pkg in "${i[@]}" ; do
