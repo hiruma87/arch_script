@@ -6,14 +6,12 @@ sleep 1
 # wipe file system of the installation destination disk
 wipefs --all /dev/sda
 sleep 1
-
 sgdisk -g /dev/sda
 sleep 1
 # create a new EFI system partition of size 512 MiB with partition label as "BOOT"
 sgdisk -n 0:0:+1024M -t 0:ef00 /dev/sda
 #sgdisk -n 0:0:+300M -t 0:ef00 -c 0:BOOT /dev/sda
 sleep 1
-
 # create a new Linux x86-64 root (/) partition on the remaining space with partition label as "ROOT"
 #sgdisk -n 0:0:+200G -t 0:8304 -c 0:ROOT /dev/sda
 sgdisk -n 0:0:0 -t 0:8304 /dev/sda
@@ -51,39 +49,24 @@ btrfs sub cr /mnt/@opt
 sleep 1
 btrfs sub cr /mnt/@crash
 sleep 1
-btrfs su cr /mnt/@AccountsService
-sleep 1
-btrfs su cr /mnt/@lightdm
-sleep 1
-btrfs su cr /mnt/@lightdm-data
-sleep 1
-#btrfs su cr /mnt/@sddm (or gdm)
-btrfs su cr /mnt/@tmp
-sleep 1
 btrfs su cr /mnt/@images
 sleep 1
 btrfs su cr /mnt/@spool
-sleep 1
-btrfs su cr /mnt/@root
 sleep 1
 umount /mnt
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{boot/efi,home/.snapshots,.swap,.snapshots,root,tmp,opt,media/raid0}
+mkdir -p /mnt/{boot/efi,home/.snapshots,.swap,.snapshots,opt,media/raid0}
 #mkdir -p /mnt/{boot/efi,home,.swap}
 sleep 3
-mkdir -p /mnt/var/{log,cache,crash,spool,lib/{AccountsService,lightdm,lightdm-data,libvirt/images}}
+mkdir -p /mnt/var/{log,cache,crash,spool,lib/{libvirt/images}}
 sleep 3
 mount /dev/sda1 /mnt/boot/efi
 sleep 1
 mount /dev/md127 /mnt/media/raid0
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@root /dev/sda2 /mnt/root
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@tmp /dev/sda2 /mnt/tmp
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@opt /dev/sda2 /mnt/opt
 sleep 1
@@ -100,12 +83,6 @@ sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@spool /dev/sda2 /mnt/var/spool
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@home/.snapshots /dev/sda2 /mnt/home/.snapshots
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@AccountsService /dev/sda2 /mnt/var/lib/AccountsService
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@lightdm /dev/sda2 /mnt/var/lib/lightdm
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@lightdm-data /dev/sda2 /mnt/var/lib/lightdm-data
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@images /dev/sda2 /mnt/var/lib/libvirt/images
 sleep 1
