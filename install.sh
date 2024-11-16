@@ -53,16 +53,9 @@ echo
 i=(
 base
 base-devel
-#linux-zen
-#linux-lts
 linux
-#linux-firmware
-neovim
+vim #change to you favorite editor e.g Nano, emacs, neovim
 bash-completion
-#sudo
-#linux-firmware-marvell
-#linux-firmware-qlogic
-#linux-firmware-whence
 )
 
 for pkg in "${i[@]}" ; do
@@ -89,5 +82,7 @@ sleep 1
 echo -e "\nDone.\n\nBase installation is now complete.\n\n"
 sleep 1
 curl https://raw.githubusercontent.com/hiruma87/arch_script/main/preinstall.sh -o /mnt/preinstall.sh
+sleep 1
+chmod +x /mnt/preinstall.sh
 #cp -rf preinstall.sh /mnt
 arch-chroot /mnt /bin/bash
