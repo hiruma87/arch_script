@@ -1,3 +1,20 @@
+cd "${HOME}"
+sleep 1
+mkdir git
+sleep 1
+cd git
+sleep 1
+echo "CLONING: YAY"
+sleep 1
+git clone "https://aur.archlinux.org/yay.git"
+sleep 1
+cd yay
+sleep 1
+makepkg -si --noconfirm
+sleep 1
+cd "${HOME}"
+sleep 1
+
 func_install() {
 	if pacman -Qi $1 &> /dev/null; then
 		tput setaf 2
@@ -13,7 +30,7 @@ func_install() {
     	echo "###############################################################################"
     	echo
     	tput sgr0
-    	sudo pacman -S --noconfirm --needed $1
+    	sudo yay -S --noconfirm --needed $1
     fi
 }
 
@@ -24,31 +41,82 @@ echo "Installation of the core software"
 list=(
 #org-sercer and desktop
 xorg-server
+xorg-xwayland
+xorg-xinit
+xorg-xwininfo
+egl-wayland
 sddm
-plasma
-dolphin
-dolphin-plugin
-kwrite
-kcalc
+plasma-desktop
+plasma-workspace
+ocean-sound-theme
+oxygen
+oxygen-sounds
+plasma-nm
+plasma-pa
 bluedevil
-konsole
-ark
-gwenview
-kbackup
-kcalc
-kclock
-ktorrent
-okular
+breeze-gtk
+drkonqi
+kde-gtk-config
+kde-plasma-addons
+kgamma
+kinfocenter
+krdp
+kscreen
+kwrited
+plasma-disks
+plasma-systemmonitor
+plasma-workspace-wallpapers
+powerdevil
+print-manager
+sddm-kcm
+xdg-desktop-portal-kde
+breeze-grub
+breeze-plymouth
+flatpak-kcm
+plymouth-kcm
+#utilities
 cups
+cups-pdf
 gutenprint
-xsane
+unzip
+unrar
+flatpak
+grub-btrfs
+btrfs-assistant
+python-pipx
+wireless_tools
+inotify-tools
+jq
+wget
+#and graphic
+mesa
+lib32-mesa
+vulkan-radeon
+lib32-vulkan-radeon
+libva
+lib32-libva
+libva-utils
+#bluetooth
 bluez
-bluez-libs
 bluez-utils
+bluez-libs
+#audip
 pipewire
+wireplumber
+pipewire-alsa
+pipewire-jack
 pipewire-pulse
-lib32-pipewire
-udiskie
+libpulse
+gst-plugin-pipewire
+#apps
+konsole
+kate
+ark
+discover
+dolphin
+firefox
+opera
+thunderbird
 )
 
 for name in "${list[@]}" ; do
@@ -61,19 +129,9 @@ for name in "${list[@]}" ; do
 done
 
 ##############################################################################
-cd "${HOME}"
-cd git
-echo "CLONING: YAY"
-git clone "https://aur.archlinux.org/yay.git"
-cd yay
-makepkg -si --noconfirm
-sleep 1
-
-sudo sh udiskie.sh
-sh yay.sh
 
 sudo systemctl enable bluetooth
 sudo systemctl enable cups
-sydo systemctl enable sddm
+sudo systemctl enable sddm
 
 
