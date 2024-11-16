@@ -21,7 +21,7 @@
     ```
 
 2, Installing base arch
-- At the end of btrfs_part.sh, it will automatically download the install.sh script
+    - At the end of btrfs_part.sh, it will automatically download the install.sh script
 - The scrpt will set the ntp and generate fstab file
 - To manually download the install file
    ```bash
