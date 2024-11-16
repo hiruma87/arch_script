@@ -130,8 +130,17 @@ done
 
 ##############################################################################
 
-sudo systemctl enable bluetooth
 sudo systemctl enable cups
-sudo systemctl enable sddm
+sudo systemctl enable bluetooth
+sudo systemctl enable lightdm.service
+sudo systemctl enable reflector.service
+sudo systemctl enable reflector.timer
+sudo systemctl mask systemd-rfkill.socket
+sudo systemctl mask systemd-rfkill.service
+sudo systemctl enable upower
 
-
+sleep 1
+	echo "################################################################"
+	tput setaf 3;echo "Installing complete" tput sgr0;
+	echo "################################################################"
+sleep 1
