@@ -129,7 +129,6 @@ sudo systemctl enable bluetooth
 sudo systemctl enable lightdm.service
 sudo systemctl enable reflector.service
 sudo systemctl enable reflector.timer
-sudo systemctl enable --user pipewire-pulse.service
 sudo systemctl mask systemd-rfkill.socket
 sudo systemctl mask systemd-rfkill.service
 sudo systemctl enable upower
