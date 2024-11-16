@@ -122,8 +122,8 @@ lib32-vulkan-radeon
 libva
 lib32-libva
 libva-utils
-os-prober
-neovim
+vim
+mdadm
 )
 
 for pkg in "${i[@]}" ; do
@@ -212,14 +212,14 @@ sleep 1
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArchLinux --removable
 sleep 1
 
-echo '##################################################################'
-echo 'Enable OS_PROBER'
-echo '##################################################################'
-sleep 1
+#echo '##################################################################'
+#echo 'Enable OS_PROBER'
+#echo '##################################################################'
+#sleep 1
 
 #echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
-sed -i 's #GRUB_DISABLE_OS_PROBER=false GRUB_DISABLE_OS_PROBER=false' /etc/default/grub
-sleep 1
+#sed -i 's #GRUB_DISABLE_OS_PROBER=false GRUB_DISABLE_OS_PROBER=false' /etc/default/grub
+#sleep 1
 
 echo '##################################################################'
 echo 'Create boot config'
