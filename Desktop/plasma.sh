@@ -1,27 +1,28 @@
+#! /bin/sh
+
+tput setaf 3
+echo "###############################################################################"
+echo "##################  Installing package Plasma Desktop"
+echo "###############################################################################"
+echo
+tput sgr0
+
 cd "${HOME}"
-sleep 1
 mkdir git
-sleep 1
 cd git
-sleep 1
 echo "CLONING: YAY"
-sleep 1
 git clone "https://aur.archlinux.org/yay.git"
-sleep 1
 cd yay
-sleep 1
 makepkg -si --noconfirm
-sleep 1
-cd "${HOME}"
-sleep 1
+
 
 func_install() {
 	if pacman -Qi $1 &> /dev/null; then
 		tput setaf 2
   		echo "###############################################################################"
   		echo "################## The package "$1" is already installed"
-      	echo "###############################################################################"
-      	echo
+      	        echo "###############################################################################"
+      	        echo
 		tput sgr0
 	else
     	tput setaf 3
