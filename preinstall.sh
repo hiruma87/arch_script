@@ -15,6 +15,9 @@ read rtpw
 echo -e "\nEnter new hostname (device name):\n"
 
 read host
+
+echo -e "\nEnter timezone:\n" #mine Asia/Kuala_Lumpur, you can check your timeone via timedatectl list-timezones"
+read tzone
 echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nUpdating Pacman Configuration (this time for installation destination system)...\n"
 
@@ -27,12 +30,6 @@ sleep 1
 echo "'sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf'"
 sleep 1
 sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf
-
-#echo '[multilib]
-#Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
-#sleep 1
-
-#vim /etc/pacman.conf
 sleep 1
 echo "Done"
 sleep 1
@@ -51,8 +48,9 @@ echo '##################################################################'
 echo 'Set Local time'
 echo '##################################################################'
 sleep 1
-echo "ln -sf /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime"
-ln -sf /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
+#echo "ln -sf /usr/share/zoneinfo/"tzone" " "/etc/localtime"
+#ln -sf /usr/share/zoneinfo/$tzone /etc/localtime
+timedatectl set-timezone $tzone
 sleep 1
 echo "Done"
 sleep 1
@@ -103,18 +101,34 @@ func_install() {
 }
 
 i=(
+#linux header and firmware
 linux-headers
-intel-ucode
-iwd
-networkmanager
-reflector
 sof-firmware
 linux-firmware-whence
 linux-firmware
-snapper
+
+#microcode related
+intel-ucode
+#amd-ucode
+
+#networking and wifi
+iwd #intel wireless network
+networkmanager
+
+#mirror setup
+reflector
+
+#grub
 grub
 efibootmgr
+#os-prober (uncomment in-case you want to dual-booting)
+
+#optional, make your life easier though
+snapper
 git
+mdadm
+
+# Graphic card, also optional, you can install on next boot anyway
 mesa
 lib32-mesa
 vulkan-radeon
@@ -122,8 +136,6 @@ lib32-vulkan-radeon
 libva
 lib32-libva
 libva-utils
-vim
-mdadm
 )
 
 for pkg in "${i[@]}" ; do
@@ -144,12 +156,12 @@ echo 'Set Hosts'
 echo '##################################################################'
 sleep 1
 
-#hostnamectl set-hostname $host
-#sleep 1
-echo "echo $host >> /etc/hostname"
-echo $host >> /etc/hostname
-#hostnamectl
+hostnamectl hostname $host
 sleep 1
+#echo "echo $host >> /etc/hostname"
+#echo $host >> /etc/hostname
+#hostnamectl
+#sleep 1
 
 echo '127.0.0.1       localhost
 ::1             localhost ip6-localhost ip6-loopback
@@ -160,12 +172,7 @@ sleep 1
 echo '##################################################################'
 echo 'Compile kernel mkinitcpio'
 echo '##################################################################'
-
-#sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/' /etc/mkinitcpio.conf
 sleep 1
-#mkinitcpio -p linux-zen
-#echo "mkinitcpio -p linux-lts"
-#mkinitcpio -p linux-lts
 echo "mkinitcpio -p linux"
 mkinitcpio -p linux
 echo "Done"
@@ -217,8 +224,8 @@ sleep 1
 #echo '##################################################################'
 #sleep 1
 
-#echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
-#sed -i 's #GRUB_DISABLE_OS_PROBER=false GRUB_DISABLE_OS_PROBER=false' /etc/default/grub
+# Uncomment if you want OS-prober
+#sudo sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub
 #sleep 1
 
 echo '##################################################################'
@@ -227,8 +234,6 @@ echo '##################################################################'
 sleep 1
 
 grub-mkconfig -o /boot/grub/grub.cfg
-sleep 1
-#grub-mkconfig -o /boot/grub/efi/grub.cfg
 sleep 1
 
 echo '##################################################################'
