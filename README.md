@@ -37,4 +37,27 @@
      ```
 
 3. Arch-chroot and setting up Arch
-   - The install script will automatically download a preinstall script and bring you to chroot ```bash arch-chroot /mnt```
+   - The install script will automatically download a preinstall script and bring you to chroot
+     ```bash
+     arch-chroot /mnt
+     ```
+   - The preinstall.sh file will setup up the user,password, timezone, grub and other dependencies that will help you to boot into arch
+   - To manually download the preinstall file
+     ```bash
+        curl https://raw.githubusercontent.com/hiruma87/arch_script/main/preinstall.sh -o preinstall.sh
+     ```
+   - Make sure you modify the file eg. the graphic driver part and os-prober incase you want to dual boot
+  
+5. Exit and reboot
+   - Exit the chroot mode by typing exit
+   - Umount
+     ```bash
+     umount -a
+     ```
+   - There will be error saying some partition busy, ignore them
+   - reboot by typing
+     ```bash
+     reboot
+     ```
+   - Take out your boot drive (USB, CD)
+   - And enjoy using Arch, well there wouldn't be DE, you will customize them to your taste
