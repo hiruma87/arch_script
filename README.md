@@ -22,7 +22,7 @@
 
 2. Installing base arch
    - At the end of btrfs_part.sh, it will automatically download the install.sh script
-   - The scrpt will set the ntp and generate fstab file
+   - The scrpt will set the timedatectl install base programs (base, linux) and generate fstab file
    - To manually download the install file
    ```bash
     curl https://raw.githubuser.com/hiruma87/arch_script/main/install.sh -o install.sh
