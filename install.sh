@@ -1,7 +1,8 @@
 echo -e "\nStarting NTP Daemon...\n"
 sleep 1
 
-timedatectl set-ntp true
+#timedatectl set-ntp true
+timedatectl
 sleep 1
 
 echo -e "\nDone.\n\n"
@@ -75,7 +76,7 @@ sleep 1
 echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nGenerating FSTab...\n"
 echo
-genfstab -U -p /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 sleep 1
 cat /mnt/etc/fstab
 sleep 1
