@@ -49,7 +49,10 @@
    - Make sure you modify the file eg. the graphic driver part and os-prober incase you want to dual boot
   
 5. Exit and reboot
-   - Exit the chroot mode by typing exit
+   - Exit the chroot mode by typing
+     ```bash
+     exit
+     ```
    - Umount
      ```bash
      umount -a
