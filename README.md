@@ -1,4 +1,4 @@
-# arch_script
+# arch_script (not encrypted)
 ## Credit
 DomiLuebben: [DomiLuebben Archmatic](https://github.com/DomiLuebben/ArchMatic)
 
