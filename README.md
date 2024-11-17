@@ -35,3 +35,6 @@
      ```bash
      sh install.sh
      ```
+
+3. Arch-chroot and setting up Arch
+   - The install script will automatically download a preinstall script and bring you to chroot ```bash arch-chroot /mnt```
