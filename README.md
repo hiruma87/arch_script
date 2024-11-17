@@ -4,6 +4,9 @@ DomiLuebben: [DomiLuebben Archmatic](https://github.com/DomiLuebben/ArchMatic)
 
 erikdubois and Arcolinux: [Arco Linux](https://github.com/arcolinuxd)
 
+Arch Wiki: [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
+
+## Installation
 1. Download the btrfs_part.sh
     - the files will create btrfs partitions for your drive
     - Nake sure to modify the partions according to your taste or requirements via vim or nano
