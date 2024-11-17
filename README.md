@@ -20,10 +20,18 @@
     ./btrfs_part.sh
     ```
 
-2, Installing base arch
-    - At the end of btrfs_part.sh, it will automatically download the install.sh script
-- The scrpt will set the ntp and generate fstab file
-- To manually download the install file
+2. Installing base arch
+   - At the end of btrfs_part.sh, it will automatically download the install.sh script
+   - The scrpt will set the ntp and generate fstab file
+   - To manually download the install file
    ```bash
     curl https://raw.githubuser.com/hiruma87/arch_script/main/install.sh -o install.sh
    ```
+   - The file already made as executable, so you can run it using either of this command
+     ```bash
+     ./install.sh
+     ```
+     or
+     ```bash
+     sh install.sh
+     ```
