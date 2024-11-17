@@ -44,9 +44,17 @@
    - The preinstall.sh file will setup up the user,password, timezone, grub and other dependencies that will help you to boot into arch
    - To manually download the preinstall file
      ```bash
-        curl https://raw.githubusercontent.com/hiruma87/arch_script/main/preinstall.sh -o preinstall.sh
+     curl https://raw.githubusercontent.com/hiruma87/arch_script/main/preinstall.sh -o preinstall.sh
      ```
    - Make sure you modify the file eg. the graphic driver part and os-prober incase you want to dual boot
+   - Run the script by
+     ```bash
+     sh preinstall.sh
+     ```
+     or
+     ```bash
+     ./preisntall.sh
+     ```
   
 5. Exit and reboot
    - Exit the chroot mode by typing
