@@ -39,7 +39,7 @@ umount /mnt
 sleep 1
 mount -o subvol=@,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{boot/efi,.swap,.snapshots}
+mkdir -p /mnt/{boot/efi,home,.swap,.snapshots}
 sleep 1
 # mount my raid drive
 mkdir -p /mnt/media/raid0
