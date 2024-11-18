@@ -18,6 +18,8 @@ read host
 
 echo -e "\nEnter timezone:\n" #mine Asia/Kuala_Lumpur, you can check your timeone via timedatectl list-timezones"
 read tzone
+sleep 1
+
 echo "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo -e "\nUpdating Pacman Configuration (this time for installation destination system)...\n"
 
@@ -48,9 +50,9 @@ echo '##################################################################'
 echo 'Set Local time'
 echo '##################################################################'
 sleep 1
-#echo "ln -sf /usr/share/zoneinfo/"tzone" " "/etc/localtime"
-#ln -sf /usr/share/zoneinfo/$tzone /etc/localtime
-timedatectl set-timezone $tzone
+echo "ln -sf /usr/share/zoneinfo/"tzone" " "/etc/localtime"
+ln -sf /usr/share/zoneinfo/$tzone /etc/localtime
+#timedatectl set-timezone $tzone
 sleep 1
 echo "Done"
 sleep 1
@@ -156,12 +158,12 @@ echo 'Set Hosts'
 echo '##################################################################'
 sleep 1
 
-hostnamectl hostname $host
-sleep 1
-#echo "echo $host >> /etc/hostname"
-#echo $host >> /etc/hostname
-#hostnamectl
+#hostnamectl hostname $host
 #sleep 1
+echo "echo $host >> /etc/hostname"
+echo $host >> /etc/hostname
+hostnamectl
+sleep 1
 
 echo '127.0.0.1       localhost
 ::1             localhost ip6-localhost ip6-loopback
@@ -190,7 +192,7 @@ echo '##################################################################'
 echo 'Create user'
 echo '##################################################################'
 sleep 1
-
+# in truth you no need this much group, wheel is enough
 useradd -m -g users -G audio,video,network,games,wheel,storage,rfkill -s /bin/bash $user
 sleep 1
 
