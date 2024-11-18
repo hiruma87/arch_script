@@ -31,7 +31,7 @@ btrfs sub cr /mnt/@
 sleep 1
 btrfs sub cr /mnt/@home
 sleep 1
-btrfs sub cr /mnt/@.swap
+btrfs sub cr /mnt/@swap
 sleep 1
 btrfs sub cr /mnt/@.snapshots
 sleep 1
@@ -51,7 +51,7 @@ mount /dev/md127 /mnt/media/raid0
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
 sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@.swap /dev/sda2 /mnt/.swap
+mount -o noatime,compress=zstd,discard=async,subvol=@swap /dev/sda2 /mnt/.swap
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@.snapshots /dev/sda2 /mnt/.snapshots
 sleep 1
