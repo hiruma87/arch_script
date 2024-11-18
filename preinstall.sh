@@ -114,7 +114,7 @@ intel-ucode
 #amd-ucode
 
 #networking and wifi
-iwd #intel wireless network
+iwd #intel wireless driver
 networkmanager
 
 #mirror setup
@@ -128,9 +128,9 @@ efibootmgr
 #optional, make your life easier though
 snapper
 git
-mdadm
+mdadm #for reading raid structure
 
-# Graphic card, also optional, you can install on next boot anyway
+# Graphic card, also optional, you can install on next boot anyway, these are for AMD GC
 mesa
 lib32-mesa
 vulkan-radeon
@@ -162,7 +162,7 @@ sleep 1
 #sleep 1
 echo "echo $host >> /etc/hostname"
 echo $host >> /etc/hostname
-hostnamectl
+#hostnamectl
 sleep 1
 
 echo '127.0.0.1       localhost
