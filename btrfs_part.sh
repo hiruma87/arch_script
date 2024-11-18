@@ -37,7 +37,7 @@ btrfs sub cr /mnt/@.snapshots
 sleep 1
 umount /mnt
 sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
+mount -o subvol=@,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt
 sleep 1
 mkdir -p /mnt/{boot/efi,.swap,.snapshots}
 sleep 1
@@ -49,11 +49,11 @@ sleep 1
 # mount my raid drive
 mount /dev/md127 /mnt/media/raid0
 sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
+mount -o subvol=@home,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/home
 sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@swap /dev/sda2 /mnt/.swap
+mount -o subvol=@swap,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/.swap
 sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@.snapshots /dev/sda2 /mnt/.snapshots
+mount -o subvol=@.snapshots,noatime,compress=zstd,discard=async /dev/sda2 /mnt/.snapshots
 sleep 1
 lsblk
 sleep 1
