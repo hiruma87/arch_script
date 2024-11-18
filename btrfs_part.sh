@@ -29,62 +29,31 @@ mount /dev/sda2 /mnt
 sleep 1
 btrfs sub cr /mnt/@
 sleep 1
-#umount /mnt
-#sleep 3
-#mount /dev/sda3 /mnt
-#sleep 3
 btrfs sub cr /mnt/@home
 sleep 1
 btrfs sub cr /mnt/@.swap
 sleep 1
 btrfs sub cr /mnt/@.snapshots
 sleep 1
-btrfs sub cr /mnt/@cache
-sleep 1
-btrfs sub cr /mnt/@log
-sleep 1
-btrfs sub cr /mnt/@home/.snapshots
-sleep 1
-btrfs sub cr /mnt/@opt
-sleep 1
-btrfs sub cr /mnt/@crash
-sleep 1
-btrfs su cr /mnt/@images
-sleep 1
-btrfs su cr /mnt/@spool
-sleep 1
 umount /mnt
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@ /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{boot/efi,home/.snapshots,.swap,.snapshots,opt,media/raid0}
-#mkdir -p /mnt/{boot/efi,home,.swap}
-sleep 3
-mkdir -p /mnt/var/{log,cache,crash,spool,lib/{libvirt/images}}
-sleep 3
+mkdir -p /mnt/{boot/efi,.swap,.snapshots}
+sleep 1
+# mount my raid drive
+mkdir -p /mnt/media/raid0
+sleep 1
 mount /dev/sda1 /mnt/boot/efi
 sleep 1
+# mount my raid drive
 mount /dev/md127 /mnt/media/raid0
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@home /dev/sda2 /mnt/home
 sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@opt /dev/sda2 /mnt/opt
-sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@.swap /dev/sda2 /mnt/.swap
 sleep 1
 mount -o noatime,compress=zstd,discard=async,subvol=@.snapshots /dev/sda2 /mnt/.snapshots
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@log /dev/sda2 /mnt/var/log
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@cache /dev/sda2 /mnt/var/cache
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@crash /dev/sda2 /mnt/var/crash
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@spool /dev/sda2 /mnt/var/spool
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@home/.snapshots /dev/sda2 /mnt/home/.snapshots
-sleep 1
-mount -o noatime,compress=zstd,discard=async,subvol=@images /dev/sda2 /mnt/var/lib/libvirt/images
 sleep 1
 lsblk
 sleep 1
