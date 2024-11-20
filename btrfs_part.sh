@@ -35,11 +35,19 @@ btrfs sub cr /mnt/@swap
 sleep 1
 btrfs sub cr /mnt/@.snapshots
 sleep 1
+btrfs sub cr /mnt/@log
+sleep 1
+btrfs sub cr /mnt/@cache
+sleep 1
+btrfs sub cr /mnt/@opt
+sleep 1
 umount /mnt
 sleep 1
 mount -o subvol=@,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{boot/efi,home,.swap,.snapshots}
+mkdir -p /mnt/{boot/efi,home,opt,.swap,.snapshots}
+sleep 1
+mkdir -p /mnt/var/{log,cache}
 sleep 1
 # mount my raid drive
 mkdir -p /mnt/media/raid0
@@ -54,6 +62,12 @@ sleep 1
 mount -o subvol=@swap,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/.swap
 sleep 1
 mount -o subvol=@.snapshots,noatime,compress=zstd,discard=async /dev/sda2 /mnt/.snapshots
+sleep 1
+mount -o subvol=@log,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/var/log
+sleep 1
+mount -o subvol=@cache,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/var/cache
+sleep 1
+mount -o subvol=@opt,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/opt
 sleep 1
 lsblk
 sleep 1
