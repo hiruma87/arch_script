@@ -138,6 +138,7 @@ lib32-vulkan-radeon
 libva
 lib32-libva
 libva-utils
+# intel integrated graphic
 vulkan-intel
 lib32-vulkan-intel
 )
