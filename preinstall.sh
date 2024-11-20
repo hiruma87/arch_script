@@ -138,6 +138,8 @@ lib32-vulkan-radeon
 libva
 lib32-libva
 libva-utils
+vulkan-intel
+lib32-vulkan-intel
 )
 
 for pkg in "${i[@]}" ; do
