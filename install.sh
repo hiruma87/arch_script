@@ -1,7 +1,7 @@
 echo -e "\nStarting NTP Daemon...\n"
 sleep 1
 
-#timedatectl set-ntp true
+timedatectl set-ntp true
 timedatectl
 sleep 1
 
