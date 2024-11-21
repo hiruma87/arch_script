@@ -45,14 +45,14 @@ umount /mnt
 sleep 1
 mount -o subvol=@,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{boot/efi,home,opt,.swap,.snapshots}
+mkdir -p /mnt/{boot,home,opt,.swap,.snapshots}
 sleep 1
 mkdir -p /mnt/var/{log,cache}
 sleep 1
 # mount my raid drive
 mkdir -p /mnt/media/raid0
 sleep 1
-mount /dev/sda1 /mnt/boot/efi
+mount /dev/sda1 /mnt/boot
 sleep 1
 # mount my raid drive
 mount /dev/md127 /mnt/media/raid0
