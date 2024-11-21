@@ -33,6 +33,7 @@ echo "'sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[mu
 sleep 1
 sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf
 sleep 1
+sudo sed -i "s/ParallelDownloads = 5/ParallelDownloads = 10/" /etc/pacman.conf
 echo "Done"
 sleep 1
 
