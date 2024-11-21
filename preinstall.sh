@@ -52,7 +52,6 @@ echo '##################################################################'
 sleep 1
 echo "ln -sf /usr/share/zoneinfo/"tzone" " "/etc/localtime"
 ln -sf /usr/share/zoneinfo/$tzone /etc/localtime
-timedatectl
 sleep 1
 echo "Done"
 sleep 1
