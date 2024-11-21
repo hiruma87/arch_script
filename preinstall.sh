@@ -150,6 +150,7 @@ lib32-vulkan-intel
 #mesa
 #lib32-mesa
 #xf86-video-vmware
+#xf86-video-qxl
 
 # To access MS-DOS disks
 #mtools
