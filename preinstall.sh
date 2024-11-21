@@ -17,8 +17,8 @@ echo -e "\nEnter new hostname (device name):\n"
 read host
 
 echo -e "\nEnter timezone:\n" #mine Asia/Kuala_Lumpur, you can check your timeone via timedatectl list-timezones"
+
 read tzone
-sleep 1
 
 echo "-------------------------------------------------------------------------------------------------------------------"
 echo -e "\nUpdating Pacman Configuration (this time for installation destination system)...\n"
@@ -124,6 +124,10 @@ grub
 efibootmgr
 #os-prober (uncomment in-case you want to dual-booting)
 
+# for systemd boot
+efibootmgr
+os-prober
+
 #optional, make your life easier though
 snapper
 git
@@ -137,14 +141,20 @@ lib32-vulkan-radeon
 libva
 lib32-libva
 libva-utils
+
 # intel integrated graphic
 vulkan-intel
 lib32-vulkan-intel
 
 # Virtual machine graphic
-mesa
-lib32-mesa
-xf86-video-vmware
+#mesa
+#lib32-mesa
+#xf86-video-vmware
+
+# To access MS-DOS disks
+#mtools
+#dosfstools
+#ntfs-3g
 )
 
 for pkg in "${i[@]}" ; do
@@ -172,9 +182,9 @@ echo $host >> /etc/hostname
 #hostnamectl
 sleep 1
 
-echo '127.0.0.1       localhost
-::1             localhost ip6-localhost ip6-loopback
-127.0.1.1       asura' >> /etc/hosts
+echo "127.0.0.1       localhost
+::1             localhost
+127.0.1.1       $user	$host" >> /etc/hosts
 
 echo "Done"
 sleep 1
@@ -244,6 +254,27 @@ sleep 1
 
 grub-mkconfig -o /boot/grub/grub.cfg
 sleep 1
+
+# For Systemd-boot loader
+sleep 1
+echo '##################################################################'
+echo 'Create Systemd-boot bootloader'
+echo '##################################################################'
+sleep 1
+bootctl --path=/boot install
+sleep 1
+sed -i 's/#\timeout/timeout/' /boot/loader/loader.conf
+sleep 1
+sed -i 's/default/#\default/' /boot/loader/loader.conf
+sleep 1
+echo 'default arch-*' >> /boot/loader/loader.conf
+sleep 1
+touch /boot/loader/entries/arch.conf
+sleep 1
+echo 'tittle	Arch Linux
+linux	/vmlinuz-linux
+initrd	/initramfs-linux.img
+options	root=/dev/vda2 rw' >> /boot/loader/entries/arch.conf
 
 echo '##################################################################'
 echo 'Enable Network'
