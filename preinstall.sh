@@ -47,7 +47,21 @@ sleep 1
 echo "Done"
 sleep 1
 
-
+echo '##################################################################'
+echo 'Set Local time'
+echo '##################################################################'
+sleep 1
+echo "ln -sf /usr/share/zoneinfo/"tzone" " "/etc/localtime"
+ln -sf /usr/share/zoneinfo/$tzone /etc/localtime
+echo "Done"
+sleep 1
+echo "hwclock --systohc"
+hwclock --systohc
+sleep 1
+date
+sleep 1
+echo "Done"
+sleep 1
 
 echo '##################################################################'
 echo 'Setting Locale'
@@ -159,24 +173,6 @@ echo "Done"
 sleep 1
 
 echo '##################################################################'
-echo 'Set Local time'
-echo '##################################################################'
-sleep 1
-echo "ln -sf /usr/share/zoneinfo/"tzone" " "/etc/localtime"
-#ln -sf /usr/share/zoneinfo/$tzone /etc/localtime
-sleep 1
-timedatectl set-timezone $tzone
-echo "Done"
-sleep 1
-echo "hwclock --systohc"
-hwclock --systohc
-sleep 1
-date
-sleep 1
-echo "Done"
-sleep 1
-
-echo '##################################################################'
 echo 'Set Hosts'
 echo '##################################################################'
 sleep 1
@@ -184,8 +180,7 @@ sleep 1
 #hostnamectl hostname $host
 #sleep 1
 echo "echo $host >> /etc/hostname"
-#echo $host >> /etc/hostname
-hostnamectl hostname $host
+echo $host >> /etc/hostname
 sleep 1
 
 echo "127.0.0.1       localhost
