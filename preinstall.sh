@@ -262,20 +262,20 @@ echo '##################################################################'
 echo 'Create Systemd-boot bootloader'
 echo '##################################################################'
 sleep 1
-bootctl --path=/boot install
+bootctl --path=/boot/efi install
 sleep 1
-sed -i 's/#\timeout/timeout/' /boot/loader/loader.conf
+sed -i 's/#timeout/timeout/' /boot/efi/loader/loader.conf
 sleep 1
-sed -i 's/default/#\default/' /boot/loader/loader.conf
+sed -i 's/default/#default/' /boot/efi/loader/loader.conf
 sleep 1
 echo 'default arch-*' >> /boot/loader/loader.conf
 sleep 1
-touch /boot/loader/entries/arch.conf
+touch /boot/efi/loader/entries/arch.conf
 sleep 1
 echo 'tittle	Arch Linux
 linux	/vmlinuz-linux
 initrd	/initramfs-linux.img
-options	root=/dev/vda2 rw' >> /boot/loader/entries/arch.conf
+options	root=/dev/vda2 rw' >> /boot/efi/loader/entries/arch.conf
 
 echo '##################################################################'
 echo 'Enable Network'
