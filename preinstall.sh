@@ -132,6 +132,7 @@ os-prober
 #optional, make your life easier though
 snapper
 git
+wget
 mdadm #for reading raid structure
 
 # Graphic card, also optional, you can install on next boot anyway, these are for AMD GC
