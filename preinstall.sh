@@ -58,8 +58,6 @@ sleep 1
 echo "hwclock --systohc"
 hwclock --systohc
 sleep 1
-date
-sleep 1
 echo "Done"
 sleep 1
 
