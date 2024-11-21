@@ -13,6 +13,8 @@ sleep 1
 # enable options "color", "ParallelDownloads", "multilib (32-bit) repository"
 sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads ; s #\[multilib\] \[multilib\] ; /\[multilib\]/{n;s #Include Include }' /etc/pacman.conf
 sleep 1
+sudo sed -i "s/ParallelDownloads = 5/ParallelDownloads = 10/" /etc/pacman.conf
+sleep 1
 pacman-key --init
 sleep 1
 pacman-key --populate
