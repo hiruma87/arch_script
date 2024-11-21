@@ -140,6 +140,11 @@ libva-utils
 # intel integrated graphic
 vulkan-intel
 lib32-vulkan-intel
+
+# Virtual machine graphic
+mesa
+lib32-mesa
+xf86-video-vmware
 )
 
 for pkg in "${i[@]}" ; do
