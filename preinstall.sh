@@ -78,6 +78,8 @@ sleep 1
 echo "echo 'LANG=en_US.UTF-8' >> /etc/locale.conf"
 echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
 sleep 1
+echo 'KEYMAP=us' >> /etc/vconsole.conf
+sleep 1
 echo "Done"
 
 echo '##################################################################'
