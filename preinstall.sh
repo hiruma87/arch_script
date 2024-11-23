@@ -23,8 +23,6 @@ read tzone
 echo "-------------------------------------------------------------------------------------------------------------------"
 echo -e "\nUpdating Pacman Configuration (this time for installation destination system)...\n"
 
-
-
 echo '##################################################################'
 echo 'Change pacman.conf'
 echo '##################################################################'
@@ -125,8 +123,8 @@ efibootmgr
 #os-prober (uncomment in-case you want to dual-booting)
 
 # for systemd boot
-efibootmgr
-os-prober
+#efibootmgr
+#os-prober
 
 #optional, make your life easier though
 snapper
@@ -213,7 +211,7 @@ echo 'Create user'
 echo '##################################################################'
 sleep 1
 # in truth you no need this much group, wheel is enough
-useradd -m -g users -G audio,video,network,games,wheel,storage,rfkill -s /bin/bash $user
+useradd -m -g users -G wheel -s /bin/bash $user
 sleep 1
 
 echo '##################################################################'
@@ -259,25 +257,24 @@ grub-mkconfig -o /boot/grub/grub.cfg
 sleep 1
 
 # For Systemd-boot loader
-sleep 1
-echo '##################################################################'
-echo 'Create Systemd-boot bootloader'
-echo '##################################################################'
-sleep 1
-bootctl --path=/boot install
-sleep 1
-sed -i 's/#timeout/timeout/' /boot/loader/loader.conf
-sleep 1
-sed -i 's/default/#default/' /boot/loader/loader.conf
-sleep 1
-echo 'default arch-*' >> /boot/loader/loader.conf
-sleep 1
-touch /boot/loader/entries/arch.conf
-sleep 1
-echo 'tittle	Arch Linux
-linux	/vmlinuz-linux
-initrd	/initramfs-linux.img
-options	root=/dev/vda2 rw' >> /boot/loader/entries/arch.conf
+#echo '##################################################################'
+#echo 'Create Systemd-boot bootloader'
+#echo '##################################################################'
+#sleep 1
+#bootctl --path=/boot install
+#sleep 1
+#sed -i 's/#timeout/timeout/' /boot/loader/loader.conf
+#sleep 1
+#sed -i 's/default/#default/' /boot/loader/loader.conf
+#sleep 1
+#echo 'default arch-*' >> /boot/loader/loader.conf
+#sleep 1
+#touch /boot/loader/entries/arch.conf
+#sleep 1
+#echo 'tittle	Arch Linux
+#linux	/vmlinuz-linux
+#initrd	/initramfs-linux.img
+#options	root=/dev/vda2 rw' >> /boot/loader/entries/arch.conf
 
 echo '##################################################################'
 echo 'Enable Network'
