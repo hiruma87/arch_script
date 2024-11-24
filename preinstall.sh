@@ -261,7 +261,7 @@ sleep 1
 #echo 'Create Systemd-boot bootloader'
 #echo '##################################################################'
 #sleep 1
-#bootctl --path=/boot install
+#bootctl --esp-path=/efi --boot-path=/boot install
 #sleep 1
 #sed -i 's/#timeout/timeout/' /boot/loader/loader.conf
 #sleep 1
