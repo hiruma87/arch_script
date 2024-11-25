@@ -321,7 +321,7 @@ mkdir -p /etc/pacman.d/hooks
 sleep 1
 touch /etc/pacman.d/hooks/liminedeploy.hook
 sleep 1
-echo"[Trigger]
+echo "[Trigger]
 Operation = Install
 Operation = Upgrade
 Type = Package
