@@ -305,13 +305,13 @@ comment: Asura Arch Linux
 	//Arch Linux
     	protocol: linux
     	kernel_path: boot():/vmlinuz-linux
-    	kernel_cmdline: $ROOT_ID rw rootflages=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
+    	kernel_cmdline: $ROOT_ID rw rootflags=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
     	module_path: boot():/initramfs-linux.img
 
     	//Arch Linux-Fallback
         protocol: linux
     	kernel_path: boot():/vmlinuz-linux
-    	kernel_cmdline: $ROOT_ID rw rootflages=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
+    	kernel_cmdline: $ROOT_ID rw rootflags=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
     	module_path: boot():/initramfs-linux-fallback.img
 
      	//Snapshots
