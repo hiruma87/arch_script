@@ -276,6 +276,17 @@ sleep 1
 #initrd	/initramfs-linux.img
 #options	root=/dev/vda2 rw' >> /boot/loader/entries/arch.conf
 
+# Limine boot
+echo '##################################################################'
+echo 'Create Limine bootloader'
+echo '##################################################################'
+sleep 1
+ROOT_ID="$(grep '/home' /etc/fstab \
+    | awk '{print $1}' \
+    | cut -f 1)" \
+    ; echo $ROOT_ID
+sleep 1
+
 echo '##################################################################'
 echo 'Enable Network'
 echo '##################################################################'
