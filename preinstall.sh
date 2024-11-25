@@ -122,6 +122,9 @@ grub
 efibootmgr
 #os-prober (uncomment in-case you want to dual-booting)
 
+#limine boot-loaders
+limine
+
 # for systemd boot
 #efibootmgr
 #os-prober
@@ -286,6 +289,48 @@ ROOT_ID="$(grep '/home' /etc/fstab \
     | cut -f 1)" \
     ; echo $ROOT_ID
 sleep 1
+cp /usr/share/limine/limine-bios.sys /boot
+sleep 1
+mkdir -p /boot/EFI/BOOT
+sleep 1
+cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
+sleep 1
+touch /boot/limine.conf
+sleep 1
+ercho "timeout: 5
+
+/+Arch Linux
+comment: Asura Arch Linux
+
+	//Arch Linux
+    	protocol: linux
+    	kernel_path: boot():/vmlinuz-linux
+    	kernel_cmdline: $ROOT_ID rw rootflages=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
+    	module_path: boot():/initramfs-linux.img
+
+    	//Arch Linux-Fallback
+        protocol: linux
+    	kernel_path: boot():/vmlinuz-linux
+    	kernel_cmdline: $ROOT_ID rw rootflages=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
+    	module_path: boot():/initramfs-linux-fallback.img
+
+     	//Snapshots
+      	" >> /boot/limine.conf
+sleep 1
+mkdir -p /etc/pacman.d/hooks
+sleep 1
+touch /etc/pacman.d/hooks/liminedeploy.hook
+sleep 1
+echo"[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = limine              
+
+[Action]
+Description = Deploying Limine after upgrade...
+When = PostTransaction
+Exec = /usr/bin/cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/" >> /etc/pacman.d/hooks/liminedeploy.hook
 
 echo '##################################################################'
 echo 'Enable Network'
