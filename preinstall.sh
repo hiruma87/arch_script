@@ -297,7 +297,7 @@ cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
 sleep 1
 touch /boot/limine.conf
 sleep 1
-ercho "timeout: 5
+echo "timeout: 5
 
 /+Arch Linux
 comment: Asura Arch Linux
