@@ -123,7 +123,7 @@ efibootmgr
 #os-prober (uncomment in-case you want to dual-booting)
 
 #limine boot-loaders
-limine
+#limine
 
 # for systemd boot
 #efibootmgr
@@ -280,57 +280,62 @@ sleep 1
 #options	root=/dev/vda2 rw' >> /boot/loader/entries/arch.conf
 
 # Limine boot
-echo '##################################################################'
-echo 'Create Limine bootloader'
-echo '##################################################################'
-sleep 1
-ROOT_ID="$(grep '/home' /etc/fstab \
-    | awk '{print $1}' \
-    | cut -f 1)" \
-    ; echo $ROOT_ID
-sleep 1
-cp /usr/share/limine/limine-bios.sys /boot
-sleep 1
-mkdir -p /boot/EFI/BOOT
-sleep 1
-cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
-sleep 1
-touch /boot/limine.conf
-sleep 1
-echo "timeout: 5
+#echo '##################################################################'
+#echo 'Create Limine bootloader'
+#echo '##################################################################'
+#sleep 1
+#limine bios-install /dev/sda
+#sleep 1
 
-/+Arch Linux
-comment: Asura Arch Linux
+#ROOT_ID="$(grep '/home' /etc/fstab \
+#    | awk '{print $1}' \
+#    | cut -f 1)" \
+#    ; echo $ROOT_ID
+#sleep 1
 
-	//Arch Linux
-    	protocol: linux
-    	kernel_path: boot():/vmlinuz-linux
-    	kernel_cmdline: $ROOT_ID rw rootflags=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
-    	module_path: boot():/initramfs-linux.img
+#cp /usr/share/limine/limine-bios.sys /boot
+#sleep 1
+#mkdir -p /boot/EFI/BOOT
+#sleep 1
+#cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/BOOTX64.EFI
+#sleep 1
+#touch /boot/limine.conf
+#sleep 1
+#echo "timeout: 5
 
-    	//Arch Linux-Fallback
-        protocol: linux
-    	kernel_path: boot():/vmlinuz-linux
-    	kernel_cmdline: $ROOT_ID rw rootflags=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
-    	module_path: boot():/initramfs-linux-fallback.img
+#/+Arch Linux
+#comment: Asura Arch Linux
 
-     	//Snapshots
-      	" >> /boot/limine.conf
-sleep 1
-mkdir -p /etc/pacman.d/hooks
-sleep 1
-touch /etc/pacman.d/hooks/liminedeploy.hook
-sleep 1
-echo "[Trigger]
-Operation = Install
-Operation = Upgrade
-Type = Package
-Target = limine              
+#	//Arch Linux
+#    	protocol: linux
+#    	kernel_path: boot():/vmlinuz-linux
+#    	kernel_cmdline: root=$ROOT_ID rw rootflags=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
+#    	module_path: boot():/initramfs-linux.img
 
-[Action]
-Description = Deploying Limine after upgrade...
-When = PostTransaction
-Exec = /usr/bin/cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/" >> /etc/pacman.d/hooks/liminedeploy.hook
+#    	//Arch Linux-Fallback
+#        protocol: linux
+#    	kernel_path: boot():/vmlinuz-linux
+#    	kernel_cmdline: root=$ROOT_ID rw rootflags=subvol=@ quiet loglevel=0 quiet intel_iommu=on iommu=pt
+#    	module_path: boot():/initramfs-linux-fallback.img
+
+#     	//Snapshots
+#      	" >> /boot/limine.conf
+#sleep 1
+#mkdir -p /etc/pacman.d/hooks
+#sleep 1
+#touch /etc/pacman.d/hooks/liminedeploy.hook
+#sleep 1
+#echo "[Trigger]
+#Operation = Install
+#Operation = Upgrade
+#Type = Package
+#Target = limine              
+
+#[Action]
+#Description = Deploying Limine after upgrade...
+#When = PostTransaction
+#Exec = /usr/bin/cp /usr/share/limine/BOOTX64.EFI /boot/EFI/BOOT/" >> /etc/pacman.d/hooks/liminedeploy.hook
+#sleep 1
 
 echo '##################################################################'
 echo 'Enable Network'
