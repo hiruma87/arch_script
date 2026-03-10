@@ -26,11 +26,10 @@ sleep 1
 # Confirming the mount
 lsblk
 sleep 1
-echo -e "\nDone.\n\n"
-echo "-------------------------------------------------------------------------------------------------------------------"
-sleep 1
-# Next script
 pacman -Syu
 sleep 1
 grub-mkconfig -o /boot/grub/grub.cfg
+sleep 1
+echo -e "\nDone.\n\n"
+echo "-------------------------------------------------------------------------------------------------------------------"
 sleep 1
