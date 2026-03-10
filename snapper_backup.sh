@@ -1,7 +1,8 @@
 echo "-------------------------------------------------------------------------------------------------------------------"
 echo -e "\nbackup from snapper...\n"
 sleep 1
-
+mount /dev/sda1 /mnt/boot
+sleep 1
 mount -o subvol=@,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt
 sleep 1
 # mount my raid drive
