@@ -234,13 +234,13 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
 sleep 1
 
-echo '##################################################################'
-echo 'Create bootloader'
-echo '##################################################################'
-sleep 1
+#echo '##################################################################'
+#echo 'Create bootloader'
+#echo '##################################################################'
+#sleep 1
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="Arch Linux" --removable
-sleep 1
+#grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="Arch Linux" --removable
+#sleep 1
 
 #echo '##################################################################'
 #echo 'Enable OS_PROBER'
@@ -251,33 +251,33 @@ sleep 1
 #sudo sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub
 #sleep 1
 
-echo '##################################################################'
-echo 'Create boot config'
-echo '##################################################################'
-sleep 1
+#echo '##################################################################'
+#echo 'Create boot config'
+#echo '##################################################################'
+#sleep 1
 
-grub-mkconfig -o /boot/grub/grub.cfg
-sleep 1
+#grub-mkconfig -o /boot/grub/grub.cfg
+#sleep 1
 
 # For Systemd-boot loader
-#echo '##################################################################'
-#echo 'Create Systemd-boot bootloader'
-#echo '##################################################################'
-#sleep 1
-#bootctl --esp-path=/efi --boot-path=/boot install
-#sleep 1
-#sed -i 's/#timeout/timeout/' /boot/loader/loader.conf
-#sleep 1
-#sed -i 's/default/#default/' /boot/loader/loader.conf
-#sleep 1
-#echo 'default arch-*' >> /boot/loader/loader.conf
-#sleep 1
-#touch /boot/loader/entries/arch.conf
-#sleep 1
-#echo 'tittle	Arch Linux
-#linux	/vmlinuz-linux
-#initrd	/initramfs-linux.img
-#options	root=/dev/vda2 rw' >> /boot/loader/entries/arch.conf
+echo '##################################################################'
+echo 'Create Systemd-boot bootloader'
+echo '##################################################################'
+sleep 1
+bootctl --esp-path=/efi --boot-path=/boot install
+sleep 1
+sed -i 's/#timeout/timeout/' /boot/loader/loader.conf
+sleep 1
+sed -i 's/default/#default/' /boot/loader/loader.conf
+sleep 1
+echo 'default arch-*' >> /boot/loader/loader.conf
+sleep 1
+touch /boot/loader/entries/arch.conf
+sleep 1
+echo 'tittle	Arch Linux
+linux	/vmlinuz-linux
+initrd	/initramfs-linux.img
+options	root=/dev/vda2 rw' >> /boot/loader/entries/arch.conf
 
 # Limine boot
 #echo '##################################################################'
