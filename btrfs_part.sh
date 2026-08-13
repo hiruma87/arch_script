@@ -28,8 +28,8 @@ btrfs sub cr /mnt/@home
 sleep 1
 btrfs sub cr /mnt/@swap
 sleep 1
-btrfs sub cr /mnt/@.snapshots
-sleep 1
+#btrfs sub cr /mnt/@.snapshots
+#sleep 1
 btrfs sub cr /mnt/@log
 sleep 1
 btrfs sub cr /mnt/@cache
@@ -41,29 +41,29 @@ umount /mnt
 sleep 1
 mount -o subvol=@,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt
 sleep 1
-mkdir -p /mnt/{boot,home,opt,.swap,.snapshots}
+mkdir -p /mnt/{boot,home,opt,.swap}
 sleep 1
 mkdir -p /mnt/var/{log,cache}
 sleep 1
 # mount my raid drive
-mkdir -p /mnt/media/raid0
-sleep 1
-mount /dev/md127 /mnt/media/raid0
-sleep 1
+#mkdir -p /mnt/media/raid0
+#sleep 1
+#mount /dev/md127 /mnt/media/raid0
+#sleep 1
 # mount all the partitions and subvolume
 mount /dev/sda1 /mnt/boot
 sleep 1
-mount -o subvol=@home,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/home
+mount -o subvol=@home,noatime,compress=zstd:3,discard=async /dev/sda2 /mnt/home
 sleep 1
-mount -o subvol=@swap,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/.swap
+mount -o subvol=@swap,noatime,compress=zstd:3,discard=async /dev/sda2 /mnt/.swap
 sleep 1
-mount -o subvol=@.snapshots,noatime,compress=zstd,discard=async /dev/sda2 /mnt/.snapshots
+#mount -o subvol=@.snapshots,noatime,compress=zstd,discard=async /dev/sda2 /mnt/.snapshots
+#sleep 1
+mount -o subvol=@log,noatime,compress=zstd:3,discard=async /dev/sda2 /mnt/var/log
 sleep 1
-mount -o subvol=@log,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/var/log
+mount -o subvol=@cache,noatime,compress=zstd:3,discard=async /dev/sda2 /mnt/var/cache
 sleep 1
-mount -o subvol=@cache,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/var/cache
-sleep 1
-mount -o subvol=@opt,noatime,compress=zstd:1,discard=async /dev/sda2 /mnt/opt
+mount -o subvol=@opt,noatime,compress=zstd:3,discard=async /dev/sda2 /mnt/opt
 sleep 1
 # Confirming the mount
 lsblk
