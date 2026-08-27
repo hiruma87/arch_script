@@ -44,7 +44,8 @@ echo
 i=(
 base
 base-devel
-linux
+#linux #default linux kernel
+linux-zen
 vim #change to you favorite editor e.g Nano, emacs, neovim
 bash-completion
 )
