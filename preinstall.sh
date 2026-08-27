@@ -101,7 +101,8 @@ func_install() {
 
 i=(
 #linux header and firmware
-linux-headers
+#linux-headers #default linux headers
+linux-zen-headers
 sof-firmware
 linux-firmware-whence
 linux-firmware
@@ -197,7 +198,8 @@ echo 'Compile kernel mkinitcpio'
 echo '##################################################################'
 sleep 1
 echo "mkinitcpio -p linux"
-mkinitcpio -p linux
+mkinitcpio -p linux-zen
+#mkinitcpio -p linux #default kernel
 echo "Done"
 sleep 1
 
