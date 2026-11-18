@@ -113,28 +113,28 @@ intel-ucode
 
 #networking and wifi
 iwd #intel wireless driver
-networkmanager
+#networkmanager
 
 #mirror setup
 reflector
 
 #grub
-grub
-efibootmgr
+#grub
+#efibootmgr
 #os-prober (uncomment in-case you want to dual-booting)
 
 #limine boot-loaders
 #limine
 
 # for systemd boot
-#efibootmgr
-#os-prober
+efibootmgr
+os-prober
 
 #optional, make your life easier though
-snapper
+#snapper
 git
 wget
-aria2
+#aria2
 mdadm #for reading raid structure
 
 # Graphic card, also optional, you can install on next boot anyway, these are for AMD GC
@@ -279,7 +279,7 @@ sleep 1
 echo 'tittle	Arch Linux
 linux	/vmlinuz-linux
 initrd	/initramfs-linux.img
-options	root=/dev/vda2 rw' >> /boot/loader/entries/arch.conf
+options	root=/dev/sda2 rw' >> /boot/loader/entries/arch.conf
 
 # Limine boot
 #echo '##################################################################'
