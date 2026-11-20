@@ -344,6 +344,7 @@ echo '##################################################################'
 sleep 1
 
 systemctl enable systemd-networkd
+systemctk enable systemd-resolved
 systemctl enable reflector.service
 systemctl enable reflector.timer
 exit
