@@ -346,8 +346,12 @@ echo 'Enable Network'
 echo '##################################################################'
 sleep 1
 
-systemctl enable systemd-networkd
-systemctk enable systemd-resolved
+# systemd network
+#systemctl enable systemd-networkd
+#systemctl enable systemd-resolved
+
+#network manager
+Systemctl enable NetworkManager
 systemctl enable reflector.service
 systemctl enable reflector.timer
 exit
