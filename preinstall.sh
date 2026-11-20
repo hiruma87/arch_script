@@ -136,6 +136,9 @@ wget
 #aria2
 mdadm #for reading raid structure
 
+#network
+networkmanager
+
 # Graphic card, also optional, you can install on next boot anyway, these are for AMD GC
 mesa
 lib32-mesa
