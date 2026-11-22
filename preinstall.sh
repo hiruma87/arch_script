@@ -278,7 +278,7 @@ echo 'default arch-*' >> /boot/loader/loader.conf
 sleep 1
 touch /boot/loader/entries/arch.conf
 sleep 1
-echo 'tittle	Arch Linux
+echo 'title	Arch Linux
 linux	/vmlinuz-linux-zen
 initrd	/initramfs-linux-zen.img
 options	root=/dev/sda2 rw quiet splash zswap.enabled=0 intel_iommu=on iommu=pt' >> /boot/loader/entries/arch.conf
