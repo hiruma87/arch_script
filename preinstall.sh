@@ -279,9 +279,11 @@ sleep 1
 touch /boot/loader/entries/arch.conf
 sleep 1
 echo 'title	Arch Linux
+sort-key 1
 linux	/vmlinuz-linux-zen
-initrd	/initramfs-linux-zen.img
-options	root=/dev/sda2 rw quiet splash zswap.enabled=0 intel_iommu=on iommu=pt' >> /boot/loader/entries/arch.conf
+initrd	/initramfs-linux-zen.img' >> /boot/loader/entries/arch.conf
+sleep 1
+echo "options	root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda2) rw quiet splash zswap.enabled=0 intel_iommu=on iommu=pt" >> /boot/loader/entries/arch.conf
 
 # Limine boot
 #echo '##################################################################'
@@ -351,7 +353,7 @@ sleep 1
 #systemctl enable systemd-resolved
 
 #network manager
-Systemctl enable NetworkManager
+Systemctl enable NetworkManager.service
 systemctl enable reflector.service
 systemctl enable reflector.timer
 exit
