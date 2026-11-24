@@ -354,18 +354,24 @@ echo '[Match]
 Name=enp*
 
 [Network]
-Dhcp=ipv4
+DHCP=ipv4
 Gateway=192.168.1.1
-DNS=8.8.8.8
-DNS=8.8.4.4
+DNS=8.8.8.8 8.8.4.4
 IPv6AcceptRA=false
-LinkLocalAddressing=ipv4' >> /etc/systemd/network/20-wired.network
+LinkLocalAddressing=ipv4
+
+[DHCPv4]
+UseDNS=no
+
+[DHCPv6]
+UseDNS=no
+
+[IPv6AcceptRA]
+UseDNS=no' >> /etc/systemd/network/20-wired.network
 sleep 1
 systemctl enable systemd-networkd.service
 sleep 1
 systemctl enable systemd-resolved.service
-sleep 1
-ln -sf ../run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 sleep 1
 
 #network manager
