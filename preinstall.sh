@@ -281,6 +281,7 @@ sleep 1
 echo 'title	Arch Linux
 sort-key 1
 linux	/vmlinuz-linux-zen
+initrd  /intel-ucode.img
 initrd	/initramfs-linux-zen.img' >> /boot/loader/entries/arch.conf
 sleep 1
 echo "options	root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda2) rw quiet splash zswap.enabled=0 intel_iommu=on iommu=pt" >> /boot/loader/entries/arch.conf
@@ -348,12 +349,27 @@ echo 'Enable Network'
 echo '##################################################################'
 sleep 1
 
-# systemd network
-#systemctl enable systemd-networkd
-#systemctl enable systemd-resolved
+# systemd networkd
+echo '[Match]
+Name=enp*
+
+[Network]
+Dhcp=ipv4
+Gateway=192.168.1.1
+DNS=8.8.8.8
+DNS=8.8.4.4
+IPv6AcceptRA=false
+LinkLocalAddressing=ipv4' >> /etc/systemd/network/20-wired.network
+sleep 1
+systemctl enable systemd-networkd.service
+sleep 1
+systemctl enable systemd-resolved.service
+sleep 1
+ln -sf ../run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+sleep 1
 
 #network manager
-Systemctl enable NetworkManager.service
+#Systemctl enable NetworkManager.service
 systemctl enable reflector.service
 systemctl enable reflector.timer
 exit
