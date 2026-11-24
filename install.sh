@@ -77,4 +77,7 @@ curl https://raw.githubusercontent.com/hiruma87/arch_script/main/preinstall.sh -
 sleep 1
 chmod +x /mnt/preinstall.sh
 #cp -rf preinstall.sh /mnt
+# these section is for systemd-networkd
+ln -sf ln -sf ../run/systemd/resolve/stub-resolv.conf /mnt/etc/resolv.conf
+sleep 1
 arch-chroot /mnt /bin/bash
