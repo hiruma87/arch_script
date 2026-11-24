@@ -25,7 +25,7 @@ sleep 1
 # ext4 filesystem
 mkfs.ext4 -F /dev/sda2
 sleep 1
-mount -o defaults,noatime,discard /dev/sda2 /mnt
+mount -o defaults,noatime,discard=async /dev/sda2 /mnt
 sleep 1
 
 #btrfs partition
@@ -77,9 +77,9 @@ sleep 1
 # mount another hdd
 mkdir -p /mnt/media/{Games,Downloads}
 sleep 1
-mount -o defaults,noatime,discard /dev/sdb1 /mnt/media/Games
+mount -o defaults,noatime,discard=async /dev/sdb1 /mnt/media/Games
 sleep 1
-mount -o defaults,noatime /dev/sdc1 /mnt/media/Downloads
+mount -o defaults /dev/sdc1 /mnt/media/Downloads
 sleep 1
 
 # mount my raid drive
